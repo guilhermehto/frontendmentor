@@ -8,7 +8,11 @@ function App() {
   return (
     <div className="app-root">
       <div className="cards-container">
-        <Profile />
+        <Profile
+          name="Jeremy Robson"
+          avatarPath="../../images/image-jeremy.png"
+          tabs={["Daily", "Weekly", "Monthly"]}
+        />
 
         <Card
           title="Work"
