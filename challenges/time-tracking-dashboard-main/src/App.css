@@ -1,8 +1,11 @@
 .app-root {
   display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
-.cards-container {
+.main-section {
   display: flex;
   flex-direction: column;
   padding: 96px 16px;
@@ -11,4 +14,25 @@
   align-items: stretch;
   align-content: stretch;
   width: 100%;
+  max-width: 1280px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .main-section {
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 32px;
+    gap: 16px;
+  }
+
+  .profile-container {
+    width: 196px;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 620px;
+    gap: 16px;
+  }
 }
