@@ -7,7 +7,14 @@ type CardProps = {
   title?: string;
   information?: string;
   subtitle?: string;
-  variation: "work" | "play" | "study" | "exercise" | "social" | "self-care";
+  variation:
+    | "work"
+    | "play"
+    | "study"
+    | "exercise"
+    | "social"
+    | "self-care"
+    | string;
 };
 
 const Card: React.FC<CardProps> = ({

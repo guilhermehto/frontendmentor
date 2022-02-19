@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { Card } from "./components/Card/Card";
 import { Profile } from "./components/Profile/Profile";
 import "./App.css";
 
 function App() {
+  const [activities, setActivities] = useState([]);
+  const [selectedTimeframe, setSelectedTimeframe] = useState<
+    "daily" | "weekly" | "monthly"
+  >("weekly");
+
+  useEffect(() => {
+    const getSummary = async () => {
+      const result = await fetch(`/summary?timeframe=${selectedTimeframe}`);
+      const data = await result.json();
+      setActivities(data);
+    };
+
+    getSummary();
+  }, [selectedTimeframe]);
+
   return (
     <div className="app-root">
       <div className="main-section">
@@ -16,46 +31,30 @@ function App() {
           />
         </div>
         <div className="cards-container">
-          <Card
-            title="Work"
-            information="32hrs"
-            subtitle="Last Week - 36hrs"
-            variation="work"
-          />
-          <Card
-            title="Work"
-            information="32hrs"
-            subtitle="Last Week - 36hrs"
-            variation="play"
-          />
-          <Card
-            title="Work"
-            information="32hrs"
-            subtitle="Last Week - 36hrs"
-            variation="study"
-          />
-          <Card
-            title="Work"
-            information="32hrs"
-            subtitle="Last Week - 36hrs"
-            variation="exercise"
-          />
-          <Card
-            title="Work"
-            information="32hrs"
-            subtitle="Last Week - 36hrs"
-            variation="social"
-          />
-          <Card
-            title="Work"
-            information="32hrs"
-            subtitle="Last Week - 36hrs"
-            variation="self-care"
-          />
+          {activities.map((activity: any) => {
+            return (
+              <Card
+                title={activity.title}
+                information={`${activity.current}hrs`}
+                subtitle={`Last Week - ${activity.previous}hrs`}
+                variation={getCardVariationFromTitle(activity.title)}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
   );
 }
+
+const getCardVariationFromTitle = (title: string): string => {
+  const variation = "";
+  switch (title) {
+    case "Self Care":
+      return "self-care";
+    default:
+      return title.toLocaleLowerCase();
+  }
+};
 
 export default App;
