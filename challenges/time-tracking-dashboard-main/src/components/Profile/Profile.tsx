@@ -10,7 +10,7 @@ type ProfileProps = {
 
 const Profile: React.FC<ProfileProps> = ({ name, avatarPath, tabs }) => {
   return (
-    <div className="profile">
+    <div>
       <div className="overlay">
         <img src={avatarPath} />
         <div className="name-section">

@@ -3,6 +3,8 @@
   display: flex;
   padding: 32px;
   border-radius: 16px;
+  position: relative;
+  z-index: 1;
 }
 
 .overlay > img {
@@ -39,10 +41,51 @@
   top: -64px;
   margin-bottom: -64px;
   border-radius: 16px;
-  z-index: -1;
   color: var(--pale-blue);
 }
 
 .tabs p.is-active {
   color: white;
+}
+
+@media only screen and (min-width: 1200px) {
+  .overlay {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    padding-bottom: 56px;
+  }
+
+  .overlay > .name-section {
+    margin-left: 0;
+  }
+
+  .overlay > .name-section p {
+    font-size: 12px;
+  }
+
+  .overlay > .name-section h3 {
+    font-size: 30px;
+  }
+
+  .tabs {
+    height: 224px;
+    flex-direction: column;
+    top: -128px;
+    margin-bottom: -128px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 12px;
+    padding-bottom: 32px;
+  }
+
+  .tabs > p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .tabs > p:hover {
+    color: white;
+    cursor: pointer;
+  }
 }
