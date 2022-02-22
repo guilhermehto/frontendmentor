@@ -47,6 +47,7 @@ function App() {
           {activities.map((activity: any) => {
             return (
               <Card
+                key={activity.title}
                 title={activity.title}
                 information={`${activity.current}hrs`}
                 subtitle={getCardText(activity.previous)}
