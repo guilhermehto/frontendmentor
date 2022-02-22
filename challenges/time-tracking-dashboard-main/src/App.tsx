@@ -24,6 +24,13 @@ function App() {
     setSelectedTimeframe(timeframeName.toLocaleLowerCase())
   }
 
+  const getCardText = (previous: number): string => {
+    const previousType = selectedTimeframe === "daily" ? "Yesterday"
+                          : selectedTimeframe === "weekly" ? "Last week"
+                          : "Last month";
+  return `${previousType} - ${previous}hrs`
+  }
+
   return (
     <div className="app-root">
       <div className="main-section">
@@ -42,7 +49,7 @@ function App() {
               <Card
                 title={activity.title}
                 information={`${activity.current}hrs`}
-                subtitle={`Last Week - ${activity.previous}hrs`}
+                subtitle={getCardText(activity.previous)}
                 variation={getCardVariationFromTitle(activity.title)}
               />
             );
