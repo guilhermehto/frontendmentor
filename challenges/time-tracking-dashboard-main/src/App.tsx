@@ -20,6 +20,10 @@ function App() {
     getSummary();
   }, [selectedTimeframe]);
 
+  const onTimeframeSelected = (timeframeName) => {
+    setSelectedTimeframe(timeframeName.toLocaleLowerCase())
+  }
+
   return (
     <div className="app-root">
       <div className="main-section">
@@ -28,6 +32,8 @@ function App() {
             name="Jeremy Robson"
             avatarPath="../../images/image-jeremy.png"
             tabs={["Daily", "Weekly", "Monthly"]}
+            selectedTab={selectedTimeframe}
+            onTimeframeSelected={onTimeframeSelected}
           />
         </div>
         <div className="cards-container">

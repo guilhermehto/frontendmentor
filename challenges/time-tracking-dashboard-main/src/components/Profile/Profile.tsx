@@ -5,10 +5,12 @@ import "./Profile.css";
 type ProfileProps = {
   name: string;
   avatarPath: string;
+  selectedTab: string;
   tabs: string[];
+  onTimeframeSelected: (timeframeName: string) => void
 };
 
-const Profile: React.FC<ProfileProps> = ({ name, avatarPath, tabs }) => {
+const Profile: React.FC<ProfileProps> = ({ name, avatarPath, tabs, onTimeframeSelected, selectedTab}) => {
   return (
     <div>
       <div className="overlay">
@@ -20,7 +22,7 @@ const Profile: React.FC<ProfileProps> = ({ name, avatarPath, tabs }) => {
       </div>
       <div className="tabs">
         {tabs.map((tab, index) => (
-          <p key={tab} className={`tab ${index == 1 ? "is-active" : ""}`}>
+          <p key={tab} className={`tab ${selectedTab.toLocaleLowerCase() == tab.toLocaleLowerCase() ? "is-active" : ""}`} onClick={() => onTimeframeSelected(tab)}>
             {tab}
           </p>
         ))}
