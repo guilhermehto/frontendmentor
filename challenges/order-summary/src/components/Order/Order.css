@@ -1,0 +1,11 @@
+.order {
+  margin: 0 24px;
+  border-radius: 20px;
+  background-color: white;
+  height: 567px;
+}
+
+.header-image {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
