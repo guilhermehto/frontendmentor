@@ -2,34 +2,31 @@ import React, { useState, useEffect } from "react";
 
 import { Card } from "./components/Card/Card";
 import { Profile } from "./components/Profile/Profile";
+import avatar from "./images/image-jeremy.png";
 import "./App.css";
+import { getTimeframes } from "./fakes/timeTracking";
 
 function App() {
   const [activities, setActivities] = useState([]);
-  const [selectedTimeframe, setSelectedTimeframe] = useState<
-    "daily" | "weekly" | "monthly"
-  >("weekly");
+  const [selectedTimeframe, setSelectedTimeframe] = useState<string>("weekly");
 
   useEffect(() => {
-    const getSummary = async () => {
-      const result = await fetch(`/summary?timeframe=${selectedTimeframe}`);
-      const data = await result.json();
-      setActivities(data);
-    };
-
-    getSummary();
+    setActivities(getTimeframes(selectedTimeframe))
   }, [selectedTimeframe]);
 
-  const onTimeframeSelected = (timeframeName) => {
-    setSelectedTimeframe(timeframeName.toLocaleLowerCase())
-  }
+  const onTimeframeSelected = (timeframeName: string) => {
+    setSelectedTimeframe(timeframeName.toLocaleLowerCase());
+  };
 
   const getCardText = (previous: number): string => {
-    const previousType = selectedTimeframe === "daily" ? "Yesterday"
-                          : selectedTimeframe === "weekly" ? "Last week"
-                          : "Last month";
-  return `${previousType} - ${previous}hrs`
-  }
+    const previousType =
+      selectedTimeframe === "daily"
+        ? "Yesterday"
+        : selectedTimeframe === "weekly"
+        ? "Last week"
+        : "Last month";
+    return `${previousType} - ${previous}hrs`;
+  };
 
   return (
     <div className="app-root">
@@ -37,7 +34,7 @@ function App() {
         <div className="profile-container">
           <Profile
             name="Jeremy Robson"
-            avatarPath="../../images/image-jeremy.png"
+            avatarPath={avatar}
             tabs={["Daily", "Weekly", "Monthly"]}
             selectedTab={selectedTimeframe}
             onTimeframeSelected={onTimeframeSelected}

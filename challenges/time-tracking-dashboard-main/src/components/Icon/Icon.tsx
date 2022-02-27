@@ -10,11 +10,12 @@ type IconProps = {
     | "exercise"
     | "social"
     | "self-care"
-    | "ellipsis";
+    | "ellipsis"
+    | string;
 };
 
 const Icon: React.FC<IconProps> = ({ type }) => {
-  return <img src={`../../../images/icon-${type}.svg`} />;
+  return <img src={`../../../src/images/icon-${type}.svg`} />;
 };
 
 export { Icon };

@@ -1,6 +1,13 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 import { Icon } from "../Icon/Icon";
+import { IconEllipsis } from "../Icon/IconEllipsis";
+import { IconExercise } from "../Icon/IconExercise";
+import { IconPlay } from "../Icon/IconPlay";
+import { IconSelfCare } from "../Icon/IconSelfCare";
+import { IconSocial } from "../Icon/IconSocial";
+import { IconStudy } from "../Icon/IconStudy";
+import { IconWork } from "../Icon/IconWork";
 import "./Card.css";
 
 type CardProps = {
@@ -23,15 +30,29 @@ const Card: React.FC<CardProps> = ({
   subtitle,
   variation = "work",
 }) => {
+  const getIcon = (): ReactNode => {
+    switch (variation) {
+      case "work":
+        return <IconWork />;
+      case "play":
+        return <IconPlay />;
+      case "study":
+        return <IconStudy />;
+      case "exercise":
+        return <IconExercise />;
+      case "social":
+        return <IconSocial />;
+      case "self-care":
+        return <IconSelfCare />;
+    }
+  };
   return (
     <div className="card-container">
-      <div className={`background ${variation}`}>
-        <Icon type={variation} />
-      </div>
+      <div className={`background ${variation}`}>{getIcon()}</div>
       <div className="card">
         <div className="title-section">
           <p className="title">{title}</p>
-          <Icon type="ellipsis" />
+          <IconEllipsis />
         </div>
         <div className="information-section">
           <h1>{information}</h1>
