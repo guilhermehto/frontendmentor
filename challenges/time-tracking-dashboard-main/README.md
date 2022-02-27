@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution](https://your-solution-url.com)
+- [Solution](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw/hub/typescript-react-flex-responsive-dashboard-ODLEVO3eb)
 - [Live Site](https://gifted-ritchie-54b984.netlify.app/)
 
 ## My process
