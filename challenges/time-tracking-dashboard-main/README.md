@@ -25,10 +25,12 @@ Users should be able to:
 
 ### Screenshot
 
-Desktop view
+**Desktop view**
+
 ![](./screenshots/desktop.png)
 
-Mobile view
+**Mobile view**
+
 ![](./screenshots/mobile.png)
 
 ### Links
