@@ -9,6 +9,7 @@ body {
 :root {
   --pale-blue: hsl(225, 100%, 94%);
   --bright-blue: hsl(245, 75%, 52%);
+  --bright-blue-shadow: hsl(245, 75%, 52%, 20%);
 
   --very-pale-blue: hsl(225, 100%, 98%);
   --desaturated-blue: hsl(224, 23%, 55%);
