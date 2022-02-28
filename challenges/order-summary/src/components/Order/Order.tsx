@@ -1,3 +1,4 @@
+import { PlanCard } from '../PlanCard/PlanCard';
 import headerImage from '../../assets/illustration-hero.svg';
 import './Order.css';
 
@@ -9,6 +10,7 @@ const Order = () => {
       <p>
         You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!
       </p>
+      <PlanCard name="Annual Plan" price={59.99} timeframe="year" />
   </div>
   </div>
 }
