@@ -3,10 +3,15 @@
   border-radius: 20px;
   background-color: white;
   height: 567px;
+  display: flex;
+  flex-direction: column;
 }
 
 .order-summary {
-  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-evenly; padding: 0 24px;
 }
 
 .order-summary > h2 {
@@ -14,7 +19,6 @@
   font-size: 1.375em;
   text-align: center;
   line-height: 0;
-  margin: 32px 0; 
 }
 
 .order-summary > p {
@@ -23,7 +27,6 @@
   line-height: 25px;
   font-weight: 400;
   font-size: 15px;
-  margin: 0 0 24px 0;
   padding: 0 8px;
 }
 
