@@ -37,3 +37,8 @@
   color: var(--desaturated-blue);
 }
 
+@media only screen and (min-width: 768px) {
+  .plan-card > a {
+    font-size: 14px;
+  }
+}
