@@ -15,6 +15,10 @@
   box-shadow: 0 20px 20px 0 var(--bright-blue-shadow);
 }
 
+.primary:active {
+  background-color: var(--bright-blue-active);
+}
+
 .text {
   color: var(--desaturated-blue);
   background: none;

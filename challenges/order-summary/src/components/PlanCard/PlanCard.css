@@ -17,6 +17,12 @@
   font-size: 13px;
   flex-grow: 1;
   text-align: right;
+  color: var(--bright-blue);
+}
+
+.plan-card > a:active {
+  color: var(--bright-blue-active);
+  text-decoration: none;
 }
 
 .plan-description {
