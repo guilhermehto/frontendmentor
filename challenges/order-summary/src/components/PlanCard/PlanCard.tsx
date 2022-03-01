@@ -8,7 +8,7 @@ type PlanCardProps = {
   price: number,
   timeframe: "year",
 }
-const PlanCard = ({ name, price, timeframe }) => {
+const PlanCard: React.FC<PlanCardProps> = ({ name, price, timeframe }) => {
   return ( 
   <div className="plan-card">
     <img className="plan-card-icon" src={iconMusic} alt="musical note" />
