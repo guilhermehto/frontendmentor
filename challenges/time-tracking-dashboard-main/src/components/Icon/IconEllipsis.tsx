@@ -1,7 +1,7 @@
-import Icon from "../../images/icon-ellipsis.svg";
+import Icon from '../../images/icon-ellipsis.svg'
 
 const IconEllipsis = () => {
-  return <img src={Icon} />;
-};
+	return <img src={Icon} />
+}
 
-export { IconEllipsis };
+export { IconEllipsis }

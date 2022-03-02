@@ -1,91 +1,91 @@
 .overlay {
-  background-color: var(--blue);
-  display: flex;
-  padding: 32px;
-  border-radius: 16px;
-  position: relative;
-  z-index: 1;
+	background-color: var(--blue);
+	display: flex;
+	padding: 32px;
+	border-radius: 16px;
+	position: relative;
+	z-index: 1;
 }
 
 .overlay > img {
-  border: 3px solid white;
-  border-radius: 50%;
-  height: 64px;
+	border: 3px solid white;
+	border-radius: 50%;
+	height: 64px;
 }
 
 .overlay > .name-section {
-  flex-direction: column;
-  margin-left: 16px;
-  align-self: center;
+	flex-direction: column;
+	margin-left: 16px;
+	align-self: center;
 }
 
 .overlay > .name-section > p {
-  color: var(--pale-blue);
-  font-weight: 400;
-  font-size: 14px;
-  margin: 0;
+	color: var(--pale-blue);
+	font-weight: 400;
+	font-size: 14px;
+	margin: 0;
 }
 
 .overlay > .name-section > h3 {
-  color: white;
+	color: white;
 }
 
 .tabs {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  padding: 0 32px;
-  background-color: var(--dark-blue);
-  height: 128px;
-  position: relative;
-  top: -64px;
-  margin-bottom: -64px;
-  border-radius: 16px;
-  color: var(--pale-blue);
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+	padding: 0 32px;
+	background-color: var(--dark-blue);
+	height: 128px;
+	position: relative;
+	top: -64px;
+	margin-bottom: -64px;
+	border-radius: 16px;
+	color: var(--pale-blue);
 }
 
 .tabs p.is-active {
-  color: white;
+	color: white;
 }
 
 @media only screen and (min-width: 1200px) {
-  .overlay {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-    padding-bottom: 56px;
-  }
+	.overlay {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 32px;
+		padding-bottom: 56px;
+	}
 
-  .overlay > .name-section {
-    margin-left: 0;
-  }
+	.overlay > .name-section {
+		margin-left: 0;
+	}
 
-  .overlay > .name-section p {
-    font-size: 12px;
-  }
+	.overlay > .name-section p {
+		font-size: 12px;
+	}
 
-  .overlay > .name-section h3 {
-    font-size: 30px;
-  }
+	.overlay > .name-section h3 {
+		font-size: 30px;
+	}
 
-  .tabs {
-    height: 224px;
-    flex-direction: column;
-    top: -112px;
-    margin-bottom: -112px;
-    align-items: flex-start;
-    justify-content: flex-end;
-    gap: 16px;
-    padding-bottom: 32px;
-  }
+	.tabs {
+		height: 224px;
+		flex-direction: column;
+		top: -112px;
+		margin-bottom: -112px;
+		align-items: flex-start;
+		justify-content: flex-end;
+		gap: 16px;
+		padding-bottom: 32px;
+	}
 
-  .tabs > p {
-    margin: 0;
-    font-size: 14px;
-  }
+	.tabs > p {
+		margin: 0;
+		font-size: 14px;
+	}
 
-  .tabs > p:hover {
-    color: white;
-    cursor: pointer;
-  }
+	.tabs > p:hover {
+		color: white;
+		cursor: pointer;
+	}
 }

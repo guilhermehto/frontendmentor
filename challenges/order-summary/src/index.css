@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;900&display=swap');
 
 body {
-  margin: 0;
-  font-size: 16px;
-  font-family: 'Red Hat Display';
+	margin: 0;
+	font-size: 16px;
+	font-family: 'Red Hat Display';
 }
 
 :root {
-  --pale-blue: hsl(225, 100%, 94%);
-  --bright-blue: hsl(245, 75%, 52%);
-  --bright-blue-shadow: hsl(245, 75%, 52%, 20%);
-  --bright-blue-active: hsl(245, 83%, 68%);
+	--pale-blue: hsl(225, 100%, 94%);
+	--bright-blue: hsl(245, 75%, 52%);
+	--bright-blue-shadow: hsl(245, 75%, 52%, 20%);
+	--bright-blue-active: hsl(245, 83%, 68%);
 
-  --very-pale-blue: hsl(225, 100%, 98%);
-  --desaturated-blue: hsl(224, 23%, 55%);
-  --dark-blue: hsl(223, 47%, 23%);
+	--very-pale-blue: hsl(225, 100%, 98%);
+	--desaturated-blue: hsl(224, 23%, 55%);
+	--dark-blue: hsl(223, 47%, 23%);
 }

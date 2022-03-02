@@ -1,57 +1,57 @@
 .plan-card {
-  display: flex;
-  height: 48px;
-  border-radius: 12px;
-  background-color: var(--very-pale-blue);
-  padding: 16px;
-  font-size: 14px;
+	display: flex;
+	height: 48px;
+	border-radius: 12px;
+	background-color: var(--very-pale-blue);
+	padding: 16px;
+	font-size: 14px;
 }
 
 .plan-card-icon {
-  margin-right: 20px;
+	margin-right: 20px;
 }
 
 .plan-card > a {
-  font-weight: 700;
-  align-self: center;
-  font-size: 13px;
-  flex-grow: 1;
-  text-align: right;
-  color: var(--bright-blue);
+	font-weight: 700;
+	align-self: center;
+	font-size: 13px;
+	flex-grow: 1;
+	text-align: right;
+	color: var(--bright-blue);
 }
 
 .plan-card > a:active {
-  color: var(--bright-blue-active);
-  text-decoration: none;
+	color: var(--bright-blue-active);
+	text-decoration: none;
 }
 
 .plan-description {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 .plan-description > p {
-  margin: 0;
+	margin: 0;
 }
 
 .plan-description > .name {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 .plan-description > .pricing {
-  font-weight: 400;
-  color: var(--desaturated-blue);
+	font-weight: 400;
+	color: var(--desaturated-blue);
 }
 
 @media only screen and (min-width: 768px) {
-  .plan-card {
-    padding: 24px;
-  }
+	.plan-card {
+		padding: 24px;
+	}
 
-  .plan-description > p {
-    font-size: 16px;
-  }
-  .plan-card > a {
-    font-size: 14px;
-  }
+	.plan-description > p {
+		font-size: 16px;
+	}
+	.plan-card > a {
+		font-size: 14px;
+	}
 }

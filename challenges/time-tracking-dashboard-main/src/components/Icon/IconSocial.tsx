@@ -1,7 +1,7 @@
-import Icon from "../../images/icon-social.svg";
+import Icon from '../../images/icon-social.svg'
 
 const IconSocial = () => {
-  return <img src={Icon} />;
-};
+	return <img src={Icon} />
+}
 
-export { IconSocial };
+export { IconSocial }

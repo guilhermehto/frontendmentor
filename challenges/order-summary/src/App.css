@@ -1,17 +1,16 @@
 #main-section {
-  height: 100vh;
-  background-image: url('./assets/pattern-background-mobile.svg'); 
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: var(--pale-blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	height: 100vh;
+	background-image: url('./assets/pattern-background-mobile.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-color: var(--pale-blue);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-
 @media only screen and (min-width: 768px) {
-  #main-section {
-    background-image: url('./assets/pattern-background-desktop.svg');
-  }
+	#main-section {
+		background-image: url('./assets/pattern-background-desktop.svg');
+	}
 }

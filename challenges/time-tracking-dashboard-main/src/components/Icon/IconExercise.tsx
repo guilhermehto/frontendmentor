@@ -1,7 +1,7 @@
-import Icon from "../../images/icon-exercise.svg";
+import Icon from '../../images/icon-exercise.svg'
 
 const IconExercise = () => {
-  return <img src={Icon} />;
-};
+	return <img src={Icon} />
+}
 
-export { IconExercise };
+export { IconExercise }

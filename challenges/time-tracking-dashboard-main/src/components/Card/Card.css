@@ -1,92 +1,92 @@
 .card {
-  background-color: var(--dark-blue);
-  border-radius: 12px;
-  color: white;
-  padding: 18px;
+	background-color: var(--dark-blue);
+	border-radius: 12px;
+	color: white;
+	padding: 18px;
 }
 
 .card:hover {
-  background-color: var(--desaturated-blue);
-  cursor: pointer;
+	background-color: var(--desaturated-blue);
+	cursor: pointer;
 }
 
 .background {
-  border-radius: 16px;
-  height: 72px;
-  top: 32px;
-  margin-top: -32px;
-  padding: 0 12px;
-  position: relative;
-  display: flex;
-  z-index: -1;
-  overflow: hidden;
+	border-radius: 16px;
+	height: 72px;
+	top: 32px;
+	margin-top: -32px;
+	padding: 0 12px;
+	position: relative;
+	display: flex;
+	z-index: -1;
+	overflow: hidden;
 }
 
 .background img {
-  margin-left: auto;
-  position: relative;
-  top: -8px;
+	margin-left: auto;
+	position: relative;
+	top: -8px;
 }
 
 .background.work {
-  background-color: var(--light-orange);
+	background-color: var(--light-orange);
 }
 
 .background.play {
-  background-color: var(--soft-blue);
+	background-color: var(--soft-blue);
 }
 
 .background.study {
-  background-color: var(--light-red);
+	background-color: var(--light-red);
 }
 
 .background.exercise {
-  background-color: var(--lime-green);
+	background-color: var(--lime-green);
 }
 
 .background.social {
-  background-color: var(--violet-social);
+	background-color: var(--violet-social);
 }
 
 .background.self-care {
-  background-color: var(--soft-orange);
+	background-color: var(--soft-orange);
 }
 
 .title {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .title-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .information-section {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 .subtitle {
-  font-weight: 400;
-  color: var(--pale-blue);
-  font-size: 14px;
+	font-weight: 400;
+	color: var(--pale-blue);
+	font-size: 14px;
 }
 
 @media only screen and (min-width: 1200px) {
-  .card-container {
-    width: 196px;
-  }
+	.card-container {
+		width: 196px;
+	}
 
-  .title-section .title {
-    font-size: 14px;
-  }
+	.title-section .title {
+		font-size: 14px;
+	}
 
-  .information-section {
-    flex-direction: column;
-  }
+	.information-section {
+		flex-direction: column;
+	}
 
-  .information-section > p {
-    font-size: 12px;
-  }
+	.information-section > p {
+		font-size: 12px;
+	}
 }

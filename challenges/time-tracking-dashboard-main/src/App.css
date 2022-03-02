@@ -1,46 +1,46 @@
 .app-root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .main-section {
-  display: flex;
-  flex-direction: column;
-  padding: 96px 16px;
-  row-gap: 24px;
-  justify-content: stretch;
-  align-items: stretch;
-  align-content: stretch;
-  width: 100%;
-  max-width: 1280px;
+	display: flex;
+	flex-direction: column;
+	padding: 96px 16px;
+	row-gap: 24px;
+	justify-content: stretch;
+	align-items: stretch;
+	align-content: stretch;
+	width: 100%;
+	max-width: 1280px;
 }
 
 .cards-container {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
 }
 
 @media only screen and (min-width: 1200px) {
-  .app-root {
-    height: 100vh;
-  }
+	.app-root {
+		height: 100vh;
+	}
 
-  .main-section {
-    flex-direction: row;
-    justify-content: center;
-    padding: 0 32px;
-    gap: 16px;
-  }
+	.main-section {
+		flex-direction: row;
+		justify-content: center;
+		padding: 0 32px;
+		gap: 16px;
+	}
 
-  .profile-container {
-    width: 196px;
-  }
+	.profile-container {
+		width: 196px;
+	}
 
-  .cards-container {
-    flex-flow: row wrap;
-    width: 620px;
-    gap: 16px;
-  }
+	.cards-container {
+		flex-flow: row wrap;
+		width: 620px;
+		gap: 16px;
+	}
 }

@@ -1,25 +1,25 @@
 .button {
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 15px;
-  border: none;
-  border-radius: 12px;
-  height: 50px;
-  width: 100%;
-  padding: 0;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 15px;
+	border: none;
+	border-radius: 12px;
+	height: 50px;
+	width: 100%;
+	padding: 0;
 }
 
 .primary {
-  color: white;
-  background-color: var(--bright-blue);
-  box-shadow: 0 20px 20px 0 var(--bright-blue-shadow);
+	color: white;
+	background-color: var(--bright-blue);
+	box-shadow: 0 20px 20px 0 var(--bright-blue-shadow);
 }
 
 .primary:active {
-  background-color: var(--bright-blue-active);
+	background-color: var(--bright-blue-active);
 }
 
 .text {
-  color: var(--desaturated-blue);
-  background: none;
+	color: var(--desaturated-blue);
+	background: none;
 }
