@@ -13,7 +13,6 @@
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-evenly;
-  padding: 0 24px;
 }
 
 .order-summary > h2 {
@@ -48,6 +47,7 @@
 
   .order-summary {
     padding: 0 48px;
+    padding: 16px 48px 0 48px;
   }
 
   .order-summary > h2 {
