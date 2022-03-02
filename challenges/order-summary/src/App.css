@@ -1,7 +1,8 @@
 #main-section {
   height: 100vh;
-  background-image: url('./assets/pattern-background-mobile.svg');
+  background-image: url('./assets/pattern-background-mobile.svg'); 
   background-repeat: no-repeat;
+  background-size: contain;
   background-color: var(--pale-blue);
   display: flex;
   align-items: center;
