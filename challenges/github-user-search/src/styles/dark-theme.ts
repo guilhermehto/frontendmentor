@@ -1,11 +1,10 @@
-import { commonColors } from "./common"
+import { colors } from './colors'
 
 const darkTheme = {
-  "blue": "hsl(212, 100, 50)",
-  "white": "white",
-  "black": "hsl(220, 40, 13)",
-  "dark-blue": "hsl(222, 41, 20)",
-  ...commonColors,
+	backgroundColor: colors.black,
+	primary: colors.blue,
+	textColor: colors.white,
+	headingColor: colors.white,
+	foregroundColor: colors.darkBlue,
 }
-
 export { darkTheme }
