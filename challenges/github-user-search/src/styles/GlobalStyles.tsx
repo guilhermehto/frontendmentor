@@ -1,19 +1,20 @@
 import { createGlobalStyle } from 'styled-components'
+import '@fontsource/space-mono'
 
 const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
-  html {
+  * {
     margin: 0;
     padding: 0;
+    font-family: 'Space Mono', monospace;
   }
 
   body {
-    font-family: "Space Mono";
     font-size: 16px;
     line-height: 25px;
     background-color: ${(props) => props.theme.backgroundColor};
-    color: ${(props) => props.theme.textColor}
+    color: ${(props) => props.theme.textColor};
+    padding: 32px 24px;
   }
 
   h1 {
