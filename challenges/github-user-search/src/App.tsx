@@ -1,10 +1,11 @@
-import { GlobalStyles } from './GlobalStyles.tsx'
+import { GlobalStyles } from './styles/GlobalStyles'
+
 function App() {
-  return (
+    return (
     <>
       <GlobalStyles />
-    <div>Github user search</div>
-  </>
+      <div>Github user search</div>
+    </>
   )
 }
 
