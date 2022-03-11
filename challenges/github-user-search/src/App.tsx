@@ -9,13 +9,9 @@ import { lightTheme } from './styles/light-theme'
 function App() {
 	const [selectedTheme, setSelectedTheme] = useState<'dark' | 'light'>('dark')
 
-	const getTheme = () => {
-		switch (selectedTheme) {
-			case 'dark':
-				return darkTheme
-			case 'light':
-				return lightTheme
-		}
+	const themeMap = {
+		dark: darkTheme,
+		light: lightTheme,
 	}
 
 	const handleOnThemeSelected = (newTheme: 'dark' | 'light') => {
@@ -23,7 +19,7 @@ function App() {
 	}
 
 	return (
-		<ThemeProvider theme={getTheme()}>
+		<ThemeProvider theme={themeMap[selectedTheme]}>
 			<GlobalStyles />
 			<Header selectedTheme={selectedTheme} onThemeSelected={handleOnThemeSelected} />
 		</ThemeProvider>
