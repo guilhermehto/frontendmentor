@@ -22,11 +22,17 @@ const Header: React.FC<HeaderProps> = ({ selectedTheme, onThemeSelected }) => {
 	const handleOnThemeDispayClick = () => {
 		onThemeSelected(selectedTheme === 'dark' ? 'light' : 'dark')
 	}
+	const themeToTextDisplay = {
+		dark: 'light',
+		light: 'dark',
+	}
 
 	return (
 		<Wrapper>
 			<h1>devfinder</h1>
-			<ThemeDisplay onClick={handleOnThemeDispayClick}>{selectedTheme}</ThemeDisplay>
+			<ThemeDisplay onClick={handleOnThemeDispayClick}>
+				{themeToTextDisplay[selectedTheme]}
+			</ThemeDisplay>
 		</Wrapper>
 	)
 }
