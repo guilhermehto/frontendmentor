@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -14,16 +13,22 @@ const ThemeDisplay = styled.div`
 	letter-spacing: 2.5px;
 `
 
-const ThemeSelector = () => {
-	const [selectedTheme, setSelectedTheme] = useState('dark')
-	return <ThemeDisplay>{selectedTheme}</ThemeDisplay>
+type HeaderProps = {
+	selectedTheme: 'dark' | 'light'
+	onThemeSelected: (newTheme: 'dark' | 'light') => void
 }
 
-const Header = () => (
-	<Wrapper>
-		<h1>devfinder</h1>
-		<ThemeSelector />
-	</Wrapper>
-)
+const Header: React.FC<HeaderProps> = ({ selectedTheme, onThemeSelected }) => {
+	const handleOnThemeDispayClick = () => {
+		onThemeSelected(selectedTheme === 'dark' ? 'light' : 'dark')
+	}
+
+	return (
+		<Wrapper>
+			<h1>devfinder</h1>
+			<ThemeDisplay onClick={handleOnThemeDispayClick}>{selectedTheme}</ThemeDisplay>
+		</Wrapper>
+	)
+}
 
 export { Header }
