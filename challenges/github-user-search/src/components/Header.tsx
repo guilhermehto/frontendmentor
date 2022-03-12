@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import styled from 'styled-components'
 import { IconMoon } from './Icons/Moon'
 import { IconSun } from './Icons/Sun'
