@@ -1,4 +1,7 @@
+import { useEffect } from 'react'
 import styled from 'styled-components'
+import { IconMoon } from './Icons/Moon'
+import { IconSun } from './Icons/Sun'
 
 const Wrapper = styled.div`
 	display: flex;
@@ -11,6 +14,9 @@ const ThemeDisplay = styled.div`
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 2.5px;
+	display: flex;
+	align-items: center;
+	gap: 16px;
 `
 
 type HeaderProps = {
@@ -22,16 +28,25 @@ const Header: React.FC<HeaderProps> = ({ selectedTheme, onThemeSelected }) => {
 	const handleOnThemeDispayClick = () => {
 		onThemeSelected(selectedTheme === 'dark' ? 'light' : 'dark')
 	}
-	const themeToTextDisplay = {
-		dark: 'light',
-		light: 'dark',
+
+	const themeToTextDisplayMap = {
+		dark: (
+			<>
+				light <IconSun />
+			</>
+		),
+		light: (
+			<>
+				dark <IconMoon />
+			</>
+		),
 	}
 
 	return (
 		<Wrapper>
 			<h1>devfinder</h1>
 			<ThemeDisplay onClick={handleOnThemeDispayClick}>
-				{themeToTextDisplay[selectedTheme]}
+				{themeToTextDisplayMap[selectedTheme]}
 			</ThemeDisplay>
 		</Wrapper>
 	)
