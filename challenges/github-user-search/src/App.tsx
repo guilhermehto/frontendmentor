@@ -5,6 +5,7 @@ import { Header } from './components/Header'
 import { GlobalStyles } from './styles/GlobalStyles'
 import { darkTheme } from './styles/dark-theme'
 import { lightTheme } from './styles/light-theme'
+import { SearchBar } from './components/SearchBar'
 
 function App() {
 	const [selectedTheme, setSelectedTheme] = useState<'dark' | 'light'>('dark')
@@ -22,6 +23,7 @@ function App() {
 		<ThemeProvider theme={themeMap[selectedTheme]}>
 			<GlobalStyles />
 			<Header selectedTheme={selectedTheme} onThemeSelected={handleOnThemeSelected} />
+			<SearchBar />
 		</ThemeProvider>
 	)
 }
