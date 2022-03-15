@@ -8,6 +8,14 @@ const StyledButton = styled.button`
 	border-radius: 10px;
 	border: none;
 	padding: 12.5px;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&:active {
+		background-color: ${(props) => props.theme.activeColor};
+	}
 `
 
 const Button: React.FC = ({ children }) => {

@@ -6,5 +6,6 @@ const darkTheme = {
 	textColor: colors.white,
 	headingColor: colors.white,
 	foregroundColor: colors.darkBlue,
+	activeColor: colors.paleBlue,
 }
 export { darkTheme }

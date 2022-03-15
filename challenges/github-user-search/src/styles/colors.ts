@@ -5,7 +5,7 @@ const colors = {
 	white: 'hsl(0,0%, 100%)',
 	lightGrey: 'hsl(227, 100%, 98%)',
 	darkBlue: 'hsl(222, 41%, 20%)',
-	paleBlue: 'hsl(217, 35%, 45%)',
+	paleBlue: 'hsl(212, 100%, 69%)',
 	darkGrey: 'hsl(217, 21%, 21%)',
 }
 
