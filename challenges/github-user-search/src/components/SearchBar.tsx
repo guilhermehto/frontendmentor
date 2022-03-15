@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { Button } from './Button'
 import { IconSearch } from './Icons/Search'
 
@@ -19,6 +20,7 @@ const Input = styled.input`
 	text-overflow: ellipsis;
 	flex-grow: 1;
 	margin-left: 8px;
+	caret-color: ${(props) => props.theme.primary};
 
 	&::placeholder {
 		color: ${(props) => props.theme.textColor};
