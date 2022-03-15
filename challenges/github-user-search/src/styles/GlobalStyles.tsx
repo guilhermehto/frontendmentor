@@ -7,13 +7,13 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Space Mono', monospace;
+    color: ${(props) => props.theme.textColor};
   }
 
   body {
     font-size: 16px;
     line-height: 25px;
     background-color: ${(props) => props.theme.backgroundColor};
-    color: ${(props) => props.theme.textColor};
     padding: 32px 24px;
   }
 
