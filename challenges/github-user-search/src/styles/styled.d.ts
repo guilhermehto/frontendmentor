@@ -5,8 +5,10 @@ declare module 'styled-components' {
 		backgroundColor: string
 		primary: string
 		textColor: string
+		buttonTextColor: string
 		headingColor: string
 		foregroundColor: string
 		activeColor: string
+		secondaryActiveColor: string
 	}
 }

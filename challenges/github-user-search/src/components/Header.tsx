@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { IconMoon } from './Icons/Moon'
 import { IconSun } from './Icons/Sun'
 
@@ -16,6 +17,19 @@ const ThemeDisplay = styled.div`
 	display: flex;
 	align-items: center;
 	gap: 16px;
+	fill: ${(props) => props.theme.textColor};
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&:active {
+		color: ${(props) => props.theme.secondaryActiveColor};
+
+		& svg {
+			fill: ${(props) => props.theme.secondaryActiveColor};
+		}
+	}
 `
 
 type HeaderProps = {
