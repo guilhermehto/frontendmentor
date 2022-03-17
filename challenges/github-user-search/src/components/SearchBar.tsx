@@ -11,6 +11,10 @@ const Wrapper = styled.div`
 	min-height: 24px; // something weird happening with the icon height
 	background-color: ${(props) => props.theme.foregroundColor};
 	justify-content: space-between;
+
+	& svg {
+		fill: ${(props) => props.theme.primary};
+	}
 `
 
 const Input = styled.input`
