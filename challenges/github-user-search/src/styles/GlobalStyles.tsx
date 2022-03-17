@@ -10,6 +10,10 @@ const GlobalStyles = createGlobalStyle`
     color: ${(props) => props.theme.textColor};
   }
 
+  p, a {
+      font-size: 13px;
+  }
+
   body {
     font-size: 16px;
     line-height: 25px;
