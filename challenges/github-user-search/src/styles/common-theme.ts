@@ -1,6 +1,6 @@
 const commonValues = {
-	tabletBreakPoint: '768px',
-	desktopBreakPoint: '1440px',
+	tabletBreakPoint: 768,
+	desktopBreakPoint: 1440,
 }
 
 export { commonValues }

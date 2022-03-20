@@ -13,7 +13,7 @@ declare module 'styled-components' {
 		disabledColor: string
 		disabled: boolean
 		shadow: string
-		tabletBreakPoint: string
-		desktopBreakPoint: string
+		tabletBreakPoint: number
+		desktopBreakPoint: number
 	}
 }

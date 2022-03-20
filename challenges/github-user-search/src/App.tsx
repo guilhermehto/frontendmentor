@@ -26,8 +26,13 @@ function App() {
 		justify-content: center;
 		height: 100%;
 
-		@media screen and (min-width: ${(props) => props.theme.tabletBreakPoint}) {
+		@media screen and (min-width: ${(props) => props.theme.tabletBreakPoint}px) {
 			padding: 0 98px;
+		}
+
+		@media screen and (min-width: ${(props) => props.theme.desktopBreakPoint}px) {
+			max-width: 730px;
+			margin: auto;
 		}
 	`
 

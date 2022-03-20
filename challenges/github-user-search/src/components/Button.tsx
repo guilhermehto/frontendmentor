@@ -15,7 +15,7 @@ const StyledButton = styled.button`
 		background-color: ${(props) => props.theme.activeColor};
 	}
 
-	@media screen and (min-width: ${(props) => props.theme.tabletBreakPoint}) {
+	@media screen and (min-width: ${(props) => props.theme.tabletBreakPoint}px) {
 		font-size: 16px;
 		padding: 12.5px 24px;
 	}
