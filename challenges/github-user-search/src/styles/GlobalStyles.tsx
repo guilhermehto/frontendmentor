@@ -16,13 +16,19 @@ const GlobalStyles = createGlobalStyle`
 
   a {
       text-decoration: none;
-      }
+  }
+
+  #root {
+    height: 100vh;
+  }
 
   body {
     font-size: 16px;
     line-height: 25px;
     background-color: ${(props) => props.theme.backgroundColor};
     padding: 32px 24px;
+    height: 100vh;
+    
   }
 
   h1 {

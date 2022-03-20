@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import { Header } from './components/Header'
 import { GlobalStyles } from './styles/GlobalStyles'
 import { darkTheme } from './styles/dark-theme'
@@ -20,12 +20,25 @@ function App() {
 		setSelectedTheme(newTheme)
 	}
 
+	const Wrapper = styled.div`
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100%;
+
+		@media screen and (min-width: ${(props) => props.theme.tabletBreakPoint}) {
+			padding: 0 98px;
+		}
+	`
+
 	return (
 		<ThemeProvider theme={themeMap[selectedTheme]}>
 			<GlobalStyles />
-			<Header selectedTheme={selectedTheme} onThemeSelected={handleOnThemeSelected} />
-			<SearchBar />
-			<UserProfile />
+			<Wrapper>
+				<Header selectedTheme={selectedTheme} onThemeSelected={handleOnThemeSelected} />
+				<SearchBar />
+				<UserProfile />
+			</Wrapper>
 		</ThemeProvider>
 	)
 }

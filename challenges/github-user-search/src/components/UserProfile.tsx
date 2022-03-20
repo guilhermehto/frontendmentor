@@ -14,17 +14,27 @@ const Card = styled.div`
 	background-color: ${(props) => props.theme.foregroundColor};
 	justify-content: space-between;
 	box-shadow: ${(props) => props.theme.shadow};
+	@media screen and (min-width: ${(props) => props.theme.tabletBreakPoint}) {
+		padding: 32px 24px 20px 24px;
+	}
 `
 
 const Profile = styled.div`
 	display: flex;
 	gap: 20px;
 	margin-bottom: 36px;
+	align-items: center;
+	h1 {
+		font-size: 16px;
+	}
 `
 
 const ProfileAvatar = styled.img`
 	border-radius: 50%;
-	max-height: 70px;
+	height: 70px;
+	@media screen and (min-width: ${(props) => props.theme.tabletBreakPoint}) {
+		height: 117px;
+	}
 `
 
 const ProfileText = styled.div`
@@ -34,10 +44,25 @@ const ProfileText = styled.div`
 	& a {
 		color: ${(props) => props.theme.primary};
 	}
+
+	@media screen and (min-width: ${(props) => props.theme.tabletBreakPoint}) {
+		& a,
+		p {
+			font-size: 16px;
+		}
+
+		h1 {
+			font-size: 26px;
+		}
+	}
 `
 
 const BioText = styled.p`
 	margin-bottom: 24px;
+
+	@media screen and (min-width: ${(props) => props.theme.tabletBreakPoint}) {
+		font-size: 15px;
+	}
 `
 
 const Summary = styled.div`
@@ -46,6 +71,9 @@ const Summary = styled.div`
 	border-radius: 10px;
 	margin-bottom: 16px;
 	background-color: ${(props) => props.theme.backgroundColor};
+	@media screen and (min-width: ${(props) => props.theme.tabletBreakPoint}) {
+		padding: 16px 32px;
+	}
 `
 
 const SummaryStat = styled.div`
@@ -57,12 +85,28 @@ const SummaryStat = styled.div`
 	& p {
 		font-size: 11px;
 	}
+
+	@media screen and (min-width: ${(props) => props.theme.tabletBreakPoint}) {
+		align-items: start;
+		& p {
+			font-size: 13px;
+		}
+
+		& h3 {
+			text-align: left;
+			font-size: 22px;
+		}
+	}
 `
 
 const InfoSection = styled.div`
 	display: flex;
 	gap: 16px;
 	flex-direction: column;
+	@media screen and (min-width: ${(props) => props.theme.tabletBreakPoint}) {
+		max-height: 72px;
+		flex-wrap: wrap;
+	}
 `
 
 const InfoSectionLine = styled.div`
@@ -86,7 +130,7 @@ const UserProfile = () => {
 			<Profile>
 				<ProfileAvatar src="https://avatars.githubusercontent.com/u/20494771?v=4" />
 				<ProfileText>
-					<h3>The Octocat</h3>
+					<h1>The Octocat</h1>
 					<a href="#">@octocat</a>
 					<p>Joined 25 Jan 2011</p>
 				</ProfileText>

@@ -14,6 +14,11 @@ const StyledButton = styled.button`
 		cursor: pointer;
 		background-color: ${(props) => props.theme.activeColor};
 	}
+
+	@media screen and (min-width: ${(props) => props.theme.tabletBreakPoint}) {
+		font-size: 16px;
+		padding: 12.5px 24px;
+	}
 `
 
 const Button: React.FC = ({ children }) => {

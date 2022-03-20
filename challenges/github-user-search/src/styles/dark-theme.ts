@@ -1,6 +1,8 @@
 import { colors } from './colors'
+import { commonValues } from './common-theme'
 
 const darkTheme = {
+	...commonValues,
 	backgroundColor: colors.deepDarkBlue,
 	primary: colors.blue,
 	textColor: colors.white,

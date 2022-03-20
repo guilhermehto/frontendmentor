@@ -21,6 +21,9 @@ const Wrapper = styled.div`
 const Input = styled.input`
 	border: none;
 	font-size: 13px;
+	@media screen and (min-width: ${(props) => props.theme.tabletBreakPoint}) {
+		font-size: 18px;
+	}
 	background: none;
 	text-overflow: ellipsis;
 	flex-grow: 1;
