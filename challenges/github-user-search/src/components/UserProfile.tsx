@@ -33,7 +33,6 @@ const ProfileText = styled.div`
 
 	& a {
 		color: ${(props) => props.theme.primary};
-		text-decoration: none;
 	}
 `
 
@@ -73,6 +72,12 @@ const InfoSectionLine = styled.div`
 	gap: 16px;
 	fill: ${(props) => (props.disabled ? props.theme.disabledColor : props.theme.textColor)};
 	color: ${(props) => (props.disabled ? props.theme.disabledColor : props.theme.textColor)};
+
+	& a {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 `
 
 const UserProfile = () => {
@@ -115,7 +120,7 @@ const UserProfile = () => {
 				</InfoSectionLine>
 
 				<InfoSectionLine>
-					<IconWebsite /> https://github.com
+					<IconWebsite /> <a href="https://github.com">https://github.com</a>
 				</InfoSectionLine>
 
 				<InfoSectionLine disabled>

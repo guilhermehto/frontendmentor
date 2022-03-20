@@ -14,6 +14,10 @@ const GlobalStyles = createGlobalStyle`
       font-size: 13px;
   }
 
+  a {
+      text-decoration: none;
+      }
+
   body {
     font-size: 16px;
     line-height: 25px;
