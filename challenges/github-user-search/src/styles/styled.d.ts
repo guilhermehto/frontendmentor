@@ -12,5 +12,6 @@ declare module 'styled-components' {
 		secondaryActiveColor: string
 		disabledColor: string
 		disabled: boolean
+		shadow: string
 	}
 }
