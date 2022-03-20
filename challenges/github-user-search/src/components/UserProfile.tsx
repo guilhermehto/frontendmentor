@@ -152,8 +152,6 @@ const DesktopWrapper = styled.div`
 `
 
 const UserProfile = () => {
-	const isDesktop: boolean = window.innerWidth >= commonValues.desktopBreakPoint
-
 	return (
 		<Card>
 			<Profile>
@@ -207,3 +205,5 @@ const UserProfile = () => {
 		</Card>
 	)
 }
+
+export { UserProfile }
