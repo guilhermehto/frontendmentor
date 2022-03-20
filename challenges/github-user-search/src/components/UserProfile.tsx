@@ -145,8 +145,10 @@ const InfoSectionLine = styled.div`
 
 // hate this but don't know an easier way i.e. without changing the whole dom structure
 const DesktopWrapper = styled.div`
-	margin-left: 138px;
-	margin-top: -40px;
+	@media screen and (min-width: ${(props) => props.theme.desktopBreakPoint}px) {
+		margin-left: 138px;
+		margin-top: -40px;
+	}
 `
 
 const UserProfile = () => {
