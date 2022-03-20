@@ -1,4 +1,8 @@
 import styled from 'styled-components'
+import { IconCompany } from './Icons/Company'
+import { IconLocation } from './Icons/Location'
+import { IconTwitter } from './Icons/Twitter'
+import { IconWebsite } from './Icons/Website'
 
 const Card = styled.div`
 	display: flex;
@@ -57,8 +61,17 @@ const SummaryStat = styled.div`
 
 const InfoSection = styled.div`
 	display: flex;
-	gap: 8px;
+	gap: 16px;
 	flex-direction: column;
+`
+
+const InfoSectionLine = styled.div`
+	display: flex;
+	align-items: center;
+	font-size: 13px;
+	gap: 16px;
+	fill: ${(props) => (props.disabled ? props.theme.disabledColor : props.theme.textColor)};
+	color: ${(props) => (props.disabled ? props.theme.disabledColor : props.theme.textColor)};
 `
 
 const UserProfile = () => {
@@ -95,7 +108,22 @@ const UserProfile = () => {
 				</SummaryStat>
 			</Summary>
 
-			<InfoSection>Hello info seciton</InfoSection>
+			<InfoSection>
+				<InfoSectionLine>
+					<IconLocation /> San Francisco
+				</InfoSectionLine>
+
+				<InfoSectionLine>
+					<IconWebsite /> https://github.com
+				</InfoSectionLine>
+
+				<InfoSectionLine disabled>
+					<IconTwitter /> Not Available
+				</InfoSectionLine>
+				<InfoSectionLine>
+					<IconCompany /> @github
+				</InfoSectionLine>
+			</InfoSection>
 		</Card>
 	)
 }

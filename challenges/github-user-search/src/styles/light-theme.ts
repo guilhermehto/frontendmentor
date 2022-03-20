@@ -9,6 +9,7 @@ const lightTheme = {
 	foregroundColor: colors.white,
 	activeColor: colors.paleBlue,
 	secondaryActiveColor: colors.black,
+	disabledColor: colors.faintBlue,
 }
 
 export { lightTheme }

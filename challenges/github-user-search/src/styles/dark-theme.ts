@@ -9,5 +9,6 @@ const darkTheme = {
 	foregroundColor: colors.darkBlue,
 	activeColor: colors.paleBlue,
 	secondaryActiveColor: colors.lightPaleBlue,
+	disabledColor: colors.faintGrey,
 }
 export { darkTheme }

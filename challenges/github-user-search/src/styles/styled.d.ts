@@ -10,5 +10,7 @@ declare module 'styled-components' {
 		foregroundColor: string
 		activeColor: string
 		secondaryActiveColor: string
+		disabledColor: string
+		disabled: boolean
 	}
 }
