@@ -22,9 +22,7 @@ const ThemeDisplay = styled.div`
 
 	&:hover {
 		cursor: pointer;
-	}
 
-	&:active {
 		color: ${(props) => props.theme.secondaryActiveColor};
 
 		& svg {
