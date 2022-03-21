@@ -1,4 +1,7 @@
+import { useContext, useState } from 'react'
 import styled from 'styled-components'
+import { githubClient } from '../clients/github-client'
+import { UserContext } from '../providers/UserContext'
 
 import { Button } from './Button'
 import { IconSearch } from './Icons/Search'
@@ -37,11 +40,27 @@ const Input = styled.input`
 `
 
 const SearchBar = () => {
+	const [userInput, setUserInput] = useState('')
+	const { userFetchSuccess, userFetchFail } = useContext(UserContext)
+
+	const handleOnSearchClick = async () => {
+		const user = await githubClient.getUser(userInput)
+		if (user === null) {
+			userFetchFail()
+		} else {
+			userFetchSuccess(user)
+		}
+	}
+
 	return (
 		<Wrapper>
 			<IconSearch />
-			<Input placeholder="Search GitHub username&#8230;" />
-			<Button>Search</Button>
+			<Input
+				value={userInput}
+				onChange={(event) => setUserInput(event.target.value)}
+				placeholder="Search GitHub username&#8230;"
+			/>
+			<Button onClick={handleOnSearchClick}>Search</Button>
 		</Wrapper>
 	)
 }

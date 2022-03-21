@@ -7,6 +7,7 @@ import { darkTheme } from './styles/dark-theme'
 import { lightTheme } from './styles/light-theme'
 import { SearchBar } from './components/SearchBar'
 import { UserProfile } from './components/UserProfile'
+import { UserProvider } from './providers/UserContext'
 
 function App() {
 	const [selectedTheme, setSelectedTheme] = useState<'dark' | 'light'>('dark')
@@ -38,12 +39,14 @@ function App() {
 
 	return (
 		<ThemeProvider theme={themeMap[selectedTheme]}>
-			<GlobalStyles />
-			<Wrapper>
-				<Header selectedTheme={selectedTheme} onThemeSelected={handleOnThemeSelected} />
-				<SearchBar />
-				<UserProfile />
-			</Wrapper>
+			<UserProvider>
+				<GlobalStyles />
+				<Wrapper>
+					<Header selectedTheme={selectedTheme} onThemeSelected={handleOnThemeSelected} />
+					<SearchBar />
+					<UserProfile />
+				</Wrapper>
+			</UserProvider>
 		</ThemeProvider>
 	)
 }

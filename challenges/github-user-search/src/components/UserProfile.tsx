@@ -1,4 +1,6 @@
+import { useContext } from 'react'
 import styled from 'styled-components'
+import { UserContext } from '../providers/UserContext'
 import { commonValues } from '../styles/common-theme'
 import { IconCompany } from './Icons/Company'
 import { IconLocation } from './Icons/Location'
@@ -152,53 +154,53 @@ const DesktopWrapper = styled.div`
 `
 
 const UserProfile = () => {
+	const { user } = useContext(UserContext)
+
 	return (
 		<Card>
 			<Profile>
-				<ProfileAvatar src="https://avatars.githubusercontent.com/u/20494771?v=4" />
+				<ProfileAvatar src={user.avatarUrl} alt="user's profile picture" />
 				<ProfileText>
-					<h1>The Octocat</h1>
-					<a href="#">@octocat</a>
-					<p>Joined 25 Jan 2011</p>
+					<h1>{user.name} </h1>
+					<a href={`https://github.com/${user.login}`}>@{user.login}</a>
+					<p>Joined {user.joinedAt}</p>
 				</ProfileText>
 			</Profile>
 			<DesktopWrapper>
-				<BioText>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
-					volutpat mattis eros.
-				</BioText>
+				<BioText>{user.bio ?? 'This profile has o bio'}</BioText>
 
 				<Summary>
 					<SummaryStat>
 						<p>Repos</p>
-						<h3>8</h3>
+						<h3>{user.repos}</h3>
 					</SummaryStat>
 
 					<SummaryStat>
 						<p>Followers</p>
-						<h3>3938</h3>
+						<h3>{user.followers}</h3>
 					</SummaryStat>
 
 					<SummaryStat>
 						<p>Following</p>
-						<h3>9</h3>
+						<h3>{user.following}</h3>
 					</SummaryStat>
 				</Summary>
 
 				<InfoSection>
-					<InfoSectionLine>
-						<IconLocation /> San Francisco
+					<InfoSectionLine disabled={!user.location}>
+						<IconLocation /> {user.location ?? 'Not Available'}
 					</InfoSectionLine>
 
-					<InfoSectionLine>
-						<IconWebsite /> <a href="https://github.com">https://github.com</a>
+					<InfoSectionLine disabled={!user.blog}>
+						<IconWebsite />{' '}
+						{user.blog ? <a href={user.blog}>{user.blog}</a> : 'Not Available'}
 					</InfoSectionLine>
 
-					<InfoSectionLine disabled>
-						<IconTwitter /> Not Available
+					<InfoSectionLine disabled={!user.twitterUsername}>
+						<IconTwitter /> {user.twitterUsername ?? 'Not Available'}
 					</InfoSectionLine>
-					<InfoSectionLine>
-						<IconCompany /> @github
+					<InfoSectionLine disabled={!user.company}>
+						<IconCompany /> {user.company ?? 'Not Available'}
 					</InfoSectionLine>
 				</InfoSection>
 			</DesktopWrapper>

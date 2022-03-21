@@ -21,8 +21,12 @@ const StyledButton = styled.button`
 	}
 `
 
-const Button: React.FC = ({ children }) => {
-	return <StyledButton>{children}</StyledButton>
+type ButtonProps = {
+	onClick: () => void
+}
+
+const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
+	return <StyledButton onClick={onClick}>{children}</StyledButton>
 }
 
 export { Button }
