@@ -38,16 +38,16 @@ function App() {
 	`
 
 	return (
-		<ThemeProvider theme={themeMap[selectedTheme]}>
-			<UserProvider>
+		<UserProvider>
+			<ThemeProvider theme={themeMap[selectedTheme]}>
 				<GlobalStyles />
 				<Wrapper>
 					<Header selectedTheme={selectedTheme} onThemeSelected={handleOnThemeSelected} />
 					<SearchBar />
 					<UserProfile />
 				</Wrapper>
-			</UserProvider>
-		</ThemeProvider>
+			</ThemeProvider>
+		</UserProvider>
 	)
 }
 

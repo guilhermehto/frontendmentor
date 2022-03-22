@@ -18,28 +18,32 @@ const INITIAL_USER = {
 
 const INITIAL_STATE = {
 	user: INITIAL_USER,
-	userFetchSuccess: (newUser: any) => {},
-	userFetchFail: () => {},
+	requestStatus: 'success',
 }
 
 const userReducer = (state: any, action: any) => {
 	switch (action.type) {
 		case 'user.fetch.success':
-			return action.payload
+			return { user: action.payload.user, requestStatus: action.payload.requestStatus }
 		case 'user.fetch.fail':
-			return state
+			return { ...state, ...action.payload }
 	}
 }
 
 const UserContext = createContext(INITIAL_STATE)
 
 const UserProvider: React.FC = ({ children }) => {
-	const [user, dispatch] = useReducer(userReducer, INITIAL_USER)
+	const [state, dispatch] = useReducer(userReducer, INITIAL_STATE)
 	const contextValue = {
-		user: user,
+		user: state.user,
+		requestStatus: 'success',
 		userFetchSuccess: (newUser: any) =>
-			dispatch({ type: 'user.fetch.success', payload: newUser }),
-		userFetchFail: () => dispatch({ type: 'user.fetch.fail' }),
+			dispatch({
+				type: 'user.fetch.success',
+				payload: { user: newUser, requestStatus: 'success' },
+			}),
+		userFetchFail: () =>
+			dispatch({ type: 'user.fetch.fail', payload: { requestStatus: 'failed' } }),
 	}
 
 	return <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>

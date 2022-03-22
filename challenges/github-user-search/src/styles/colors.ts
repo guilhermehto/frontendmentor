@@ -11,6 +11,7 @@ const colors = {
 	darkGrey: 'hsl(217, 21%, 21%)',
 	faintGrey: 'hsl(220, 10%, 60%)',
 	faintBlue: 'hsl(216, 28%, 72%)',
+	orange: 'hsl(0, 91%, 62%)',
 }
 
 export { colors }
