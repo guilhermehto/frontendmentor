@@ -21,6 +21,7 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 ![](./screenshots/desktop.png)
 
 **Tablet view**
+
 ![](./screenshots/tablet.png)
 
 **Mobile view**
