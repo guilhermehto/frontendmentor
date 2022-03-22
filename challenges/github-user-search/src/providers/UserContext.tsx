@@ -1,4 +1,5 @@
 import React, { createContext, useReducer } from 'react'
+import { format } from 'date-fns'
 
 // hard coded values because I don't want to mess up the screenshot on frontendmentor
 const INITIAL_USER = {
@@ -10,7 +11,7 @@ const INITIAL_USER = {
 	twitterUsername: null,
 	name: 'The Octocat',
 	blog: 'https://github.blog',
-	joinedAt: '2011-01-25T18:44:36Z',
+	joinedAt: format(new Date('2011-01-25T18:44:36Z'), 'dd MMM yyyy'),
 	repos: 8,
 	followers: 5276,
 	following: 9,
