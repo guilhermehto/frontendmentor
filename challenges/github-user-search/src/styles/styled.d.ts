@@ -11,9 +11,9 @@ declare module 'styled-components' {
 		activeColor: string
 		secondaryActiveColor: string
 		disabledColor: string
-		disabled: boolean
-		shadow: string
+		shadow?: string
 		tabletBreakPoint: number
 		desktopBreakPoint: number
+		warningColor: string
 	}
 }

@@ -19,6 +19,8 @@ const INITIAL_USER = {
 const INITIAL_STATE = {
 	user: INITIAL_USER,
 	requestStatus: 'success',
+	userFetchSuccess: (newUser: any) => {},
+	userFetchFail: () => {},
 }
 
 const userReducer = (state: any, action: any) => {

@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import styled from 'styled-components'
 import { UserContext } from '../providers/UserContext'
-import { commonValues } from '../styles/common-theme'
 import { IconCompany } from './Icons/Company'
 import { IconLocation } from './Icons/Location'
 import { IconTwitter } from './Icons/Twitter'
@@ -129,8 +128,10 @@ const InfoSection = styled.div`
 		flex-wrap: wrap;
 	}
 `
-
-const InfoSectionLine = styled.div`
+type InfoSectionLineProps = {
+	readonly disabled: boolean
+}
+const InfoSectionLine = styled.div<InfoSectionLineProps>`
 	display: flex;
 	align-items: center;
 	font-size: 13px;
