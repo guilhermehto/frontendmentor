@@ -1,5 +1,9 @@
 function App() {
-	return <h1 className="text-1xl font-bold underline">Advice Generator</h1>
+	return (
+		<main className="font-body bg-dark-blue h-screen flex items-center justify-center">
+			<h1 className="text-cyan">Advices</h1>
+		</main>
+	)
 }
 
 export default App
