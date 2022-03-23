@@ -5,10 +5,15 @@ module.exports = {
 		extend: {
 			fontSize: {
 				tiny: '11px',
+				sm: '13px',
+				'3xl': '28px',
 			},
 			boxShadow: ({ theme }) => ({
 				neon: `0 0 40px 0 ${theme('colors.green')}`,
 			}),
+			maxWidth: {
+				'custom-lg': '540px',
+			},
 		},
 		fontFamily: {
 			display: ['Manrope'],
