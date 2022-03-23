@@ -6,6 +6,10 @@ module.exports = {
 			fontSize: {
 				tiny: '11px',
 			},
+
+			boxShadow: {
+				neon: '0 0 40px 0 hsl(150, 100%, 66%)',
+			},
 		},
 		fontFamily: {
 			display: ['Manrope'],
