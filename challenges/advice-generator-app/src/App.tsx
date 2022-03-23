@@ -11,8 +11,8 @@ function App() {
 		advice: "It is easy to sit up and take notice, what's difficult is getting up and taking action.",
 	})
 	const onButtonClicked = async () => {
-		const newAdvice = await advicesClient.getRandomAdvice()
-		setSlip(newAdvice)
+		const newSlip = await advicesClient.getRandomSlip()
+		setSlip(newSlip)
 	}
 
 	return (
