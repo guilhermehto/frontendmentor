@@ -1,11 +1,17 @@
 import { Header } from './components/Header'
+import { JobCard } from './components/JobCard'
+import { JobList } from './components/JobList'
 
 function App() {
 	return (
 		<>
 			<Header />
 			<main className="bg-cyan h-screen">
-				<h1 className="text-3xl font-bold">Job listings</h1>
+				<JobList>
+					<JobCard featured />
+					<JobCard />
+					<JobCard />
+				</JobList>
 			</main>
 		</>
 	)
