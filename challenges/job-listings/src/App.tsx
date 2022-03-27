@@ -9,7 +9,12 @@ function App() {
 			<Header />
 			<main className="bg-cyan h-screen">
 				<JobList>
-					<JobCard featured companyName="Photosnap" companyLogo={photoSnapLogo} />
+					<JobCard
+						featured
+						companyName="Photosnap"
+						companyLogo={photoSnapLogo}
+						jobName="Senior Frontend Developer"
+					/>
 				</JobList>
 			</main>
 		</>

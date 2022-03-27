@@ -5,6 +5,7 @@ module.exports = {
 			fontSize: {
 				tiny: '11px',
 				xs: '13px',
+				md: '15px',
 			},
 		},
 		colors: {
