@@ -1,9 +1,15 @@
 module.exports = {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
-		extend: {},
+		extend: {
+			fontSize: {
+				tiny: '11px',
+				xs: '13px',
+			},
+		},
 		colors: {
 			red: 'red', // for testing purposes
+			black: 'hsl(180, 14%, 20%)',
 			white: 'hsl(0, 0%, 100%)',
 			'desaturated-cyan': 'hsl(180, 29%, 50%)',
 			cyan: 'hsl(180, 52%, 96%)',
