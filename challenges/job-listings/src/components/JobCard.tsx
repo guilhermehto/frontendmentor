@@ -22,10 +22,11 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
 			/>
 
 			<div className="flex flex-col gap-2">
-				<CompanyNameSection companyName={job.company}>
-					{job.isNew ? <Pill isPrimary>New!</Pill> : undefined}
-					{job.featured ? <Pill>Featured</Pill> : undefined}
-				</CompanyNameSection>
+				<CompanyNameSection
+					companyName={job.company}
+					isNew={job.isNew}
+					isFeatured={job.featured}
+				></CompanyNameSection>
 				<div className="text-md text-black font-bold">{job.position}</div>
 			</div>
 
@@ -39,13 +40,22 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
 
 type CompanyNameSectionProps = {
 	companyName: string
+	isNew: boolean
+	isFeatured: boolean
 }
 
-const CompanyNameSection: React.FC<CompanyNameSectionProps> = ({ companyName, children }) => {
+const CompanyNameSection: React.FC<CompanyNameSectionProps> = ({
+	companyName,
+	isNew,
+	isFeatured,
+}) => {
 	return (
 		<div className="flex font-bold gap-4">
 			<div className="text-desaturated-cyan text-sm">{companyName}</div>
-			<div className="flex gap-2">{children}</div>
+			<div className="flex gap-2">
+				{isNew ? <Pill isPrimary>New!</Pill> : undefined}
+				{isFeatured ? <Pill>Featured</Pill> : undefined}
+			</div>
 		</div>
 	)
 }
