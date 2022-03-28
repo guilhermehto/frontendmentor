@@ -52,7 +52,6 @@ const CompanyNameSection: React.FC<CompanyNameSectionProps> = ({ companyName, ch
 
 const Divider = () => {
 	return <span className="h-1 w-1 rounded-full bg-light-brown mx-2" />
-	return <span className="text-sm text-light-brown mx-2">&#8226;</span>
 }
 
 export { JobCard }
