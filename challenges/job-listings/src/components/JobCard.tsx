@@ -9,28 +9,30 @@ type JobCardProps = {
 
 const JobCard: React.FC<JobCardProps> = ({ job }) => {
 	const classes = classnames([
-		'bg-white rounded h-32 px-6 pb-6 shadow',
+		'bg-white rounded px-6 pb-6 shadow flex flex-col gap-2',
 		{ 'border-desaturated-cyan border-l-4': job.featured },
 	])
 
 	return (
 		<div className={classes}>
 			<img
-				className="h-12 relative bottom-6 -mb-6"
+				className="h-12 relative bottom-6 -mb-6 w-12"
 				src={`/src/assets/${job.logo}`}
 				alt="company logo"
 			/>
+
 			<div className="flex flex-col gap-2">
 				<CompanyNameSection companyName={job.company}>
-					<Tag isPrimary>New!</Tag>
-					<Tag>Featured</Tag>
+					{job.isNew ? <Tag isPrimary>New!</Tag> : undefined}
+					{job.featured ? <Tag>Featured</Tag> : undefined}
 				</CompanyNameSection>
 				<div className="text-md text-black font-bold">{job.position}</div>
 			</div>
-			<div className="flex text-sm text-dark-cyan items-center">
+
+			<div className="flex text-sm text-dark-cyan items-center mb-3">
 				{job.postedAt} <Divider /> {job.contract} <Divider /> {job.location}
 			</div>
-			<hr className="my-2 border-gray " />
+			<hr className="border-gray" />
 		</div>
 	)
 }
@@ -41,7 +43,7 @@ type CompanyNameSectionProps = {
 
 const CompanyNameSection: React.FC<CompanyNameSectionProps> = ({ companyName, children }) => {
 	return (
-		<div className="flex font-bold mt-3 gap-4">
+		<div className="flex font-bold gap-4">
 			<div className="text-desaturated-cyan text-sm">{companyName}</div>
 			<div className="flex gap-2">{children}</div>
 		</div>
