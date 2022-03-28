@@ -18,6 +18,8 @@ module.exports = {
 			'dark-cyan': 'hsl(180, 8%, 52%)',
 			'very-dark-cyan': 'hsl(180, 14%, 20%)',
 			'shadow-cyan': 'hsl(189, 81%, 28%, 15%)',
+			'light-brown': 'hsl(0, 0%, 59%)',
+			gray: 'hsl(180, 10%, 74%)',
 		},
 		boxShadow: ({ theme }) => ({
 			DEFAULT: `0 15px 20px -5px ${theme('colors.shadow-cyan')}`,
