@@ -1,7 +1,7 @@
 import classnames from 'classnames'
 
 import { Job } from '../models/job'
-import { Tag } from './Tag'
+import { Pill } from './Pill'
 
 type JobCardProps = {
 	job: Job
@@ -23,8 +23,8 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
 
 			<div className="flex flex-col gap-2">
 				<CompanyNameSection companyName={job.company}>
-					{job.isNew ? <Tag isPrimary>New!</Tag> : undefined}
-					{job.featured ? <Tag>Featured</Tag> : undefined}
+					{job.isNew ? <Pill isPrimary>New!</Pill> : undefined}
+					{job.featured ? <Pill>Featured</Pill> : undefined}
 				</CompanyNameSection>
 				<div className="text-md text-black font-bold">{job.position}</div>
 			</div>

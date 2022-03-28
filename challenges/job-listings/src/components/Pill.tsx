@@ -1,10 +1,10 @@
 import classnames from 'classnames'
 
-type TagProps = {
+type PillProps = {
 	isPrimary?: boolean
 }
 
-const Tag: React.FC<TagProps> = ({ children, isPrimary = false }) => {
+const Pill: React.FC<PillProps> = ({ children, isPrimary = false }) => {
 	const classes = classnames(
 		'rounded-full text-tiny uppercase text-white flex items-center px-2 py-1 leading-none',
 		{ 'bg-black': !isPrimary },
@@ -13,4 +13,4 @@ const Tag: React.FC<TagProps> = ({ children, isPrimary = false }) => {
 	return <div className={classes}>{children}</div>
 }
 
-export { Tag }
+export { Pill }
