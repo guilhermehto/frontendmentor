@@ -2,6 +2,7 @@ import classnames from 'classnames'
 
 import { Job } from '../models/job'
 import { Pill } from './Pill'
+import { Tag } from './Tag'
 
 type JobCardProps = {
 	job: Job
@@ -33,7 +34,20 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
 			<div className="flex text-sm text-dark-cyan items-center mb-3">
 				{job.postedAt} <Divider /> {job.contract} <Divider /> {job.location}
 			</div>
-			<hr className="border-gray" />
+			<hr className="border-gray mb-2" />
+
+			<div className="flex gap-4 flex-wrap pr-2">
+				{job.tags.map((tag) => (
+					<Tag
+						key={tag}
+						onClick={() => {
+							console.log('yes')
+						}}
+					>
+						{tag}
+					</Tag>
+				))}
+			</div>
 		</div>
 	)
 }
