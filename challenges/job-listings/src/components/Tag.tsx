@@ -1,6 +1,6 @@
 type TagProps = {
 	children: string
-	onClick: (value: string) => void
+	onClick?: (value: string) => void
 }
 
 const Tag: React.FC<TagProps> = ({ children, onClick }) => {
