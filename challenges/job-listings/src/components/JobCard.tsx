@@ -6,9 +6,10 @@ import { Tag } from './Tag'
 
 type JobCardProps = {
 	job: Job
+	onTagClick: (tag: string) => void
 }
 
-const JobCard: React.FC<JobCardProps> = ({ job }) => {
+const JobCard: React.FC<JobCardProps> = ({ job, onTagClick }) => {
 	const classes = classnames([
 		'bg-white rounded px-6 pb-6 shadow flex flex-col gap-2',
 		{ 'border-desaturated-cyan border-l-4': job.featured },
@@ -41,7 +42,7 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
 					<Tag
 						key={tag}
 						onClick={() => {
-							console.log('yes')
+							onTagClick(tag)
 						}}
 					>
 						{tag}

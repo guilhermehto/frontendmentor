@@ -1,27 +1,33 @@
+import { useState } from 'react'
+
 import { Header } from './components/Header'
 import { JobCard } from './components/JobCard'
 import { JobList } from './components/JobList'
 import { Job } from './models/job'
+import data from '../data.json'
 
 function App() {
-	const job: Job = {
-		id: 1,
-		company: 'Photosnap',
-		logo: '/photosnap.svg',
-		isNew: true,
-		featured: true,
-		position: 'Senior Frontend Developer',
-		postedAt: '1d ago',
-		contract: 'Full Time',
-		location: 'USA Only',
-		tags: ['Frontend', 'Senior', 'HTML', 'CSS', 'JavaScript'],
+	const jobOpenings: Array<Job> = data
+
+	const [selectedTags, setSelectedTags] = useState<string[]>([])
+
+	const handleOnTagClick = (tag: string) => {
+		if (selectedTags.includes(tag)) {
+			return
+		}
+
+		setSelectedTags([...selectedTags, tag])
+		console.log(selectedTags)
 	}
+
 	return (
 		<>
 			<Header />
-			<main className="bg-cyan h-screen">
+			<main className="bg-cyan pb-8">
 				<JobList>
-					<JobCard job={job} />
+					{jobOpenings.map((job) => (
+						<JobCard key={job.id} job={job} onTagClick={handleOnTagClick} />
+					))}
 				</JobList>
 			</main>
 		</>
