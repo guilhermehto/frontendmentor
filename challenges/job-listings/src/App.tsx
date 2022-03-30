@@ -18,7 +18,11 @@ function App() {
 		}
 
 		setSelectedTags([...selectedTags, tag])
-		console.log(selectedTags)
+	}
+
+	const handleOnFilterRemoved = (removedFilter: string) => {
+		const newTags = selectedTags.filter((t) => t !== removedFilter)
+		setSelectedTags(newTags)
 	}
 
 	return (
@@ -26,7 +30,11 @@ function App() {
 			<Header />
 			<main className="bg-cyan pb-8 px-6 flex flex-col gap-6">
 				{selectedTags.length > 0 ? (
-					<FilterBar className="-mb-9 relative bottom-9" filters={selectedTags} />
+					<FilterBar
+						className="-mb-9 relative bottom-9"
+						filters={selectedTags}
+						onFilterRemoved={handleOnFilterRemoved}
+					/>
 				) : undefined}
 				<JobList>
 					{jobOpenings.map((job) => (
