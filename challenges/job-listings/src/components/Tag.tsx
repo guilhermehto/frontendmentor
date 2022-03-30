@@ -11,9 +11,10 @@ type TagProps = {
 
 const Tag: React.FC<TagProps> = ({ children, onClick, rightIcon, onRightIconClick }) => {
 	const classes = classNames([
-		'text-xs font-bold text-desaturated-cyan bg-cyan py-1 px-2',
+		'text-xs font-bold text-desaturated-cyan bg-cyan py-1 px-2 hover:cursor-pointer',
 		{
-			rounded: !rightIcon,
+			'rounded active:bg-desaturated-cyan active:cursor-pointer active:text-white':
+				!rightIcon,
 		},
 		{ 'rounded-l': rightIcon },
 	])
@@ -24,12 +25,12 @@ const Tag: React.FC<TagProps> = ({ children, onClick, rightIcon, onRightIconClic
 				{children}
 			</div>
 			{rightIcon ? (
-				<div
+				<button
 					onClick={onRightIconClick}
-					className="bg-desaturated-cyan rounded-r font-bold text-white px-2 min-h-full flex items-center"
+					className="bg-desaturated-cyan rounded-r font-bold text-white px-2 min-h-full flex items-center active:bg-black"
 				>
 					{rightIcon}
-				</div>
+				</button>
 			) : undefined}
 		</div>
 	)
