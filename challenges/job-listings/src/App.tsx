@@ -44,10 +44,10 @@ function App() {
 	return (
 		<>
 			<Header />
-			<main className="min-h-screen bg-cyan pb-8 px-6 flex flex-col gap-6">
+			<main className="min-h-screen bg-cyan py-8 px-6 flex flex-col gap-6">
 				{selectedTags.length > 0 ? (
 					<FilterBar
-						className="-mb-9 relative bottom-9"
+						className="-mb-16 relative bottom-16"
 						filters={selectedTags}
 						onFilterRemoved={handleOnFilterRemoved}
 						onClearClicked={handleOnClearClicked}
