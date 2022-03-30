@@ -29,7 +29,9 @@ const JobCard: React.FC<JobCardProps> = ({ job, onTagClick }) => {
 					isNew={job.isNew}
 					isFeatured={job.featured}
 				></CompanyNameSection>
-				<div className="text-md text-black font-bold">{job.position}</div>
+				<div className="text-md text-black font-bold hover:cursor-pointer active:text-desaturated-cyan">
+					{job.position}
+				</div>
 			</div>
 
 			<div className="flex text-sm text-dark-cyan items-center mb-3">
