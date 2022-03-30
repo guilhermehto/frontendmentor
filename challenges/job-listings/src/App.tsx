@@ -25,6 +25,8 @@ function App() {
 		setSelectedTags(newTags)
 	}
 
+	const handleOnClearClicked = () => setSelectedTags([])
+
 	return (
 		<>
 			<Header />
@@ -34,6 +36,7 @@ function App() {
 						className="-mb-9 relative bottom-9"
 						filters={selectedTags}
 						onFilterRemoved={handleOnFilterRemoved}
+						onClearClicked={handleOnClearClicked}
 					/>
 				) : undefined}
 				<JobList>
