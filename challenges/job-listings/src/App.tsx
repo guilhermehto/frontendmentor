@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { Header } from './components/Header'
 import { JobCard } from './components/JobCard'
@@ -11,6 +11,7 @@ function App() {
 	const jobOpenings: Array<Job> = data
 
 	const [selectedTags, setSelectedTags] = useState<string[]>([])
+	const [filteredJobs, setFilteredJobs] = useState<Job[]>(jobOpenings)
 
 	const handleOnTagClick = (tag: string) => {
 		if (selectedTags.includes(tag)) {
@@ -27,6 +28,19 @@ function App() {
 
 	const handleOnClearClicked = () => setSelectedTags([])
 
+	useEffect(() => {
+		if (selectedTags.length === 0) {
+			setFilteredJobs(jobOpenings)
+			return
+		}
+
+		const filtered = jobOpenings.filter((job) =>
+			selectedTags.every((tag) => job.tags.includes(tag))
+		)
+
+		setFilteredJobs(filtered)
+	}, [selectedTags])
+
 	return (
 		<>
 			<Header />
@@ -40,7 +54,7 @@ function App() {
 					/>
 				) : undefined}
 				<JobList>
-					{jobOpenings.map((job) => (
+					{filteredJobs.map((job) => (
 						<JobCard key={job.id} job={job} onTagClick={handleOnTagClick} />
 					))}
 				</JobList>
