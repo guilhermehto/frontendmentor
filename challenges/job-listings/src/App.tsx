@@ -44,16 +44,16 @@ function App() {
 	return (
 		<>
 			<Header />
-			<main className="min-h-screen bg-cyan py-8 px-6 flex flex-col gap-6">
+			<main className="min-h-screen px-6">
 				{selectedTags.length > 0 ? (
 					<FilterBar
-						className="-mb-16 relative bottom-16"
+						className="-mb-8 relative bottom-8"
 						filters={selectedTags}
 						onFilterRemoved={handleOnFilterRemoved}
 						onClearClicked={handleOnClearClicked}
 					/>
 				) : undefined}
-				<JobList>
+				<JobList className="mt-8">
 					{filteredJobs.map((job) => (
 						<JobCard key={job.id} job={job} onTagClick={handleOnTagClick} />
 					))}

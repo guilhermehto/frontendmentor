@@ -8,4 +8,8 @@
 	html {
 		font-family: Spartan, sans-serif;
 	}
+
+	#root {
+		@apply bg-cyan;
+	}
 }
