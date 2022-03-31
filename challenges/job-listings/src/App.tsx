@@ -44,20 +44,22 @@ function App() {
 	return (
 		<>
 			<Header />
-			<main className="min-h-screen px-6">
-				{selectedTags.length > 0 ? (
-					<FilterBar
-						className="-mb-8 relative bottom-8"
-						filters={selectedTags}
-						onFilterRemoved={handleOnFilterRemoved}
-						onClearClicked={handleOnClearClicked}
-					/>
-				) : undefined}
-				<JobList className="mt-8">
-					{filteredJobs.map((job) => (
-						<JobCard key={job.id} job={job} onTagClick={handleOnTagClick} />
-					))}
-				</JobList>
+			<main className="min-h-screen px-6 flex justify-center">
+				<div className="max-w-lg flex-1">
+					{selectedTags.length > 0 ? (
+						<FilterBar
+							className="-mb-8 relative bottom-8 lg:-mb-17"
+							filters={selectedTags}
+							onFilterRemoved={handleOnFilterRemoved}
+							onClearClicked={handleOnClearClicked}
+						/>
+					) : undefined}
+					<JobList className="mt-8 lg:mt-19">
+						{filteredJobs.map((job) => (
+							<JobCard key={job.id} job={job} onTagClick={handleOnTagClick} />
+						))}
+					</JobList>
+				</div>
 			</main>
 		</>
 	)

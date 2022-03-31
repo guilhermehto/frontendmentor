@@ -19,7 +19,9 @@ const FilterBar: React.FC<FilterBarProps> = ({
 		onFilterRemoved && onFilterRemoved(filter)
 	}
 	return (
-		<div className={`flex justify-between bg-white flex p-5 rounded shadow ${className}`}>
+		<div
+			className={`flex justify-between bg-white flex p-5 lg:px-10 rounded shadow ${className}`}
+		>
 			<div className="flex flex-wrap gap-4">
 				{filters.map((filter: string) => (
 					<Tag

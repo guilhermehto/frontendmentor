@@ -6,6 +6,18 @@ module.exports = {
 				tiny: '11px',
 				xs: '13px',
 				md: '15px',
+				lg: '18px',
+			},
+
+			spacing: {
+				17: '4.25rem',
+				19: '4.75rem',
+				22: '5.5rem',
+				23: '5.75rem',
+			},
+
+			maxWidth: {
+				lg: '1110px',
 			},
 		},
 		colors: {
