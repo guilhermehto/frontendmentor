@@ -19,6 +19,9 @@ module.exports = {
 			maxWidth: {
 				lg: '1110px',
 			},
+			screens: {
+				xs: '376px',
+			},
 		},
 		colors: {
 			red: 'red', // for testing purposes
