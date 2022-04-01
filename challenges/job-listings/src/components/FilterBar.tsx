@@ -1,5 +1,5 @@
 import { Tag } from './Tag'
-import iconRemove from '../assets/icon-remove.svg'
+import iconRemove from '/icon-remove.svg'
 import { Button } from './Button'
 
 type FilterBarProps = {

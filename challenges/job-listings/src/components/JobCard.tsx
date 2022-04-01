@@ -20,7 +20,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, onTagClick }) => {
 			<div className="flex flex-col gap-2 lg:flex-row lg:gap-6">
 				<img
 					className="h-12 relative bottom-6 -mb-6 w-12 lg:h-22 lg:w-22 lg:bottom-0 lg:mb-0"
-					src={`/src/assets/${job.logo}`}
+					src={`/${job.logo}`}
 					alt="company logo"
 				/>
 				<div className="flex flex-col gap-2">
