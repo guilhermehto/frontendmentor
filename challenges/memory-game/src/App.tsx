@@ -1,5 +1,13 @@
+import { GlobalStyles } from './GlobalStyles'
+
 function App() {
-	return <div>Memory game</div>
+	return (
+		<>
+			<GlobalStyles />
+
+			<div>Memory game</div>
+		</>
+	)
 }
 
 export default App
