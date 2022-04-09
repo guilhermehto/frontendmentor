@@ -1,10 +1,9 @@
-import { GlobalStyles } from './GlobalStyles'
+import { GlobalStyles } from './theme/GlobalStyles'
 
 function App() {
 	return (
 		<>
 			<GlobalStyles />
-
 			<div>Memory game</div>
 		</>
 	)
