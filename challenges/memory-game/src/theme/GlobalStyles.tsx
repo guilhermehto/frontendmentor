@@ -7,6 +7,9 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     font-family: 'Atkinson Hyperlegible', sans;
   }
+  body {
+      font-size: 18px;
+  }
 `
 
 export { GlobalStyles }
