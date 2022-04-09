@@ -1,6 +1,5 @@
 import type { Story } from '@ladle/react'
 
-import { GlobalStyles } from '../../theme/GlobalStyles'
 import { Heading as HeadingComponent } from './Heading'
 
 export default {
@@ -12,7 +11,6 @@ export const Heading: Story<{
 	text: string
 }> = ({ level = 2, text }) => (
 	<>
-		<GlobalStyles />
 		<HeadingComponent level={level}>{text}</HeadingComponent>
 	</>
 )
