@@ -1,6 +1,7 @@
+import { DefaultTheme } from 'styled-components'
 import { colors } from './colors'
 
-const defaultTheme = {
+const defaultTheme: DefaultTheme = {
 	primary: colors.orange,
 	primaryHover: colors['faint-orange'],
 	white: colors.white,
