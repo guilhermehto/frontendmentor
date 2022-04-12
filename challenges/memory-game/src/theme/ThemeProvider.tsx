@@ -5,10 +5,10 @@ import { GlobalStyles } from './GlobalStyles'
 
 const ThemeProvider: React.FC = ({ children }) => {
 	return (
-		<>
+		<StyledThemeProvider theme={defaultTheme}>
 			<GlobalStyles />
-			<StyledThemeProvider theme={defaultTheme}>{children}</StyledThemeProvider>
-		</>
+			{children}
+		</StyledThemeProvider>
 	)
 }
 
