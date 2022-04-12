@@ -1,10 +1,5 @@
 import type { GlobalProvider } from '@ladle/react'
 
-import { GlobalStyles } from '../src/theme/GlobalStyles'
+import { ThemeProvider } from '../src/theme/ThemeProvider'
 
-export const Provider: GlobalProvider = ({ children }) => (
-	<>
-		<GlobalStyles />
-		{children}
-	</>
-)
+export const Provider: GlobalProvider = ({ children }) => <ThemeProvider>{children}</ThemeProvider>

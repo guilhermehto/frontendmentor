@@ -1,11 +1,10 @@
-import { GlobalStyles } from './theme/GlobalStyles'
+import { ThemeProvider } from './theme/ThemeProvider'
 
 function App() {
 	return (
-		<>
-			<GlobalStyles />
+		<ThemeProvider>
 			<div>Memory game</div>
-		</>
+		</ThemeProvider>
 	)
 }
 
