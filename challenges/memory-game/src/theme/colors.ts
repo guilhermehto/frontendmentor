@@ -8,7 +8,7 @@ const colors = {
 	'dark-gray': 'hsl(206, 45%, 15%)',
 	'light-gray': 'hsl(0,0%, 95%)',
 	'light-blue': 'hsl(203, 22%, 55%)',
-	'faint-gray': 'hsl(203, 28%, 100%)',
+	'faint-gray': 'hsl(203, 28%, 79%)',
 }
 
 export { colors }
