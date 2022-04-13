@@ -9,9 +9,12 @@ export default {
 export const Button: Story<{
 	variant: 'secondary' | 'primary'
 	text: string
-}> = ({ variant, text }) => (
+	size: 'small' | 'medium' | 'large'
+}> = ({ variant, text, size }) => (
 	<>
-		<ButtonComponent variant={variant}>{text}</ButtonComponent>
+		<ButtonComponent variant={variant} size={size}>
+			{text}
+		</ButtonComponent>
 	</>
 )
 
@@ -24,5 +27,10 @@ Button.argTypes = {
 		options: ['primary', 'secondary'],
 		control: { type: 'radio' },
 		defaultValue: 'primary',
+	},
+	size: {
+		options: ['small', 'medium', 'large'],
+		control: { type: 'radio' },
+		defaultValue: 'medium',
 	},
 }
