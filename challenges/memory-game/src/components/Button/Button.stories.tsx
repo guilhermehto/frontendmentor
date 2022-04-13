@@ -10,9 +10,10 @@ export const Button: Story<{
 	variant: 'secondary' | 'primary'
 	text: string
 	size: 'small' | 'medium' | 'large'
-}> = ({ variant, text, size }) => (
+	isTextDark: boolean
+}> = ({ variant, text, size, isTextDark }) => (
 	<>
-		<ButtonComponent variant={variant} size={size}>
+		<ButtonComponent variant={variant} size={size} isTextDark={isTextDark}>
 			{text}
 		</ButtonComponent>
 	</>
@@ -20,6 +21,7 @@ export const Button: Story<{
 
 Button.args = {
 	text: 'Button',
+	isTextDark: false,
 }
 
 Button.argTypes = {
