@@ -5,6 +5,7 @@ import { Button as ButtonComponent, ButtonProps } from './Button'
 export default {
 	title: 'General',
 }
+
 export const Button: Story<ButtonProps> = ({ variant, children, size, isTextDark }) => (
 	<>
 		<ButtonComponent variant={variant} size={size} isTextDark={isTextDark}>
