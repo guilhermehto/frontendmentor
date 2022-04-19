@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 type ButtonProps = {
 	variant: 'secondary' | 'primary'
 	children: string
-	size?: 'small' | 'medium' | 'large'
+	size?: 'small' | 'medium' | 'large' | 'ball'
 	isTextDark?: boolean
 }
 
@@ -38,6 +38,13 @@ const StyledButton = styled.button<ButtonProps>`
 				return css`
 					font-size: 32px;
 					padding: 16px 184px;
+				`
+			case 'ball':
+				return css`
+					font-size: 44px;
+					border-radius: 100%;
+					height: 82px;
+					width: 82px;
 				`
 		}
 	}}
@@ -78,3 +85,4 @@ const Button: React.FC<ButtonProps> = ({
 }
 
 export { Button }
+export type { ButtonProps }

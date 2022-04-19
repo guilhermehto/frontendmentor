@@ -1,26 +1,20 @@
 import type { Story } from '@ladle/react'
 
-import { Button as ButtonComponent } from './Button'
+import { Button as ButtonComponent, ButtonProps } from './Button'
 
 export default {
 	title: 'General',
 }
-
-export const Button: Story<{
-	variant: 'secondary' | 'primary'
-	text: string
-	size: 'small' | 'medium' | 'large'
-	isTextDark: boolean
-}> = ({ variant, text, size, isTextDark }) => (
+export const Button: Story<ButtonProps> = ({ variant, children, size, isTextDark }) => (
 	<>
 		<ButtonComponent variant={variant} size={size} isTextDark={isTextDark}>
-			{text}
+			{children}
 		</ButtonComponent>
 	</>
 )
 
 Button.args = {
-	text: 'Button',
+	children: 'Button',
 	isTextDark: false,
 }
 
@@ -31,7 +25,7 @@ Button.argTypes = {
 		defaultValue: 'primary',
 	},
 	size: {
-		options: ['small', 'medium', 'large'],
+		options: ['small', 'medium', 'large', 'ball'],
 		control: { type: 'radio' },
 		defaultValue: 'medium',
 	},
