@@ -5,6 +5,7 @@ const Wrapper = styled.div`
 	background-color: ${({ theme }) => theme.white};
 	display: flex;
 	flex-direction: column;
+	border-radius: 10px;
 `
 
 const Card: React.FC = ({ children }) => {
