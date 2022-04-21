@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 type ButtonProps = {
-	variant: 'secondary' | 'primary'
+	variant?: 'secondary' | 'primary'
 	children: string
 	size?: 'small' | 'medium' | 'large' | 'ball'
 	isTextDark?: boolean
