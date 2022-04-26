@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-const Label = styled.label<LabelProps>`
 const Label = styled.label`
 	display: flex;
 	flex-grow: 1;
@@ -37,10 +36,6 @@ type RadioProps = {
 	value: string
 	checked?: boolean
 	onChange?: (value: string) => void
-}
-
-type LabelProps = {
-	checked?: boolean
 }
 
 const Radio: React.FC<RadioProps> = ({ children, name, value, checked = false, onChange }) => {
