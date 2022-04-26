@@ -9,6 +9,8 @@ const defaultTheme: DefaultTheme = {
 	secondaryHover: colors['light-blue'],
 	secondaryActive: colors['dark-blue-gray'],
 	textColor: colors['dark-gray'],
+	secondaryTextColor: colors['light-blue'],
+	darkBackground: colors['dark-gray'],
 }
 
 export { defaultTheme }

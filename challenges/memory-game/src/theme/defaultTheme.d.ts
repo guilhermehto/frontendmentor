@@ -9,5 +9,7 @@ declare module 'styled-components' {
 		secondaryHover: string
 		secondaryActive: string
 		textColor: string
+		darkBackground: string
+		secondaryTextColor: string
 	}
 }
