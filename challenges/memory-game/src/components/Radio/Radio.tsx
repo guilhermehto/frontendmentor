@@ -1,10 +1,15 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 const Label = styled.label<LabelProps>`
+const Label = styled.label`
+	display: flex;
+	flex-grow: 1;
+	justify-content: center;
 	padding: 10px 24px;
 	background-color: ${({ theme }) => theme.secondary};
 	border-radius: 26px;
 	color: ${({ theme }) => theme.white};
+	text-align: center;
 
 	& > input[type='radio']:checked {
 		background-color: red;
@@ -22,6 +27,10 @@ const RadioInput = styled.input`
 	}
 `
 
+const RadioWrapper = styled.div`
+	display: flex;
+`
+
 type RadioProps = {
 	children: string
 	name: string
@@ -36,7 +45,7 @@ type LabelProps = {
 
 const Radio: React.FC<RadioProps> = ({ children, name, value, checked = false, onChange }) => {
 	return (
-		<>
+		<RadioWrapper>
 			<RadioInput
 				type="radio"
 				id={value}
@@ -46,7 +55,7 @@ const Radio: React.FC<RadioProps> = ({ children, name, value, checked = false, o
 				onChange={() => onChange && onChange(value)}
 			/>
 			<Label htmlFor={value}>{children}</Label>
-		</>
+		</RadioWrapper>
 	)
 }
 
