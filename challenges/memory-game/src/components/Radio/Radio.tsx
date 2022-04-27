@@ -10,10 +10,6 @@ const Label = styled.label`
 	color: ${({ theme }) => theme.white};
 	text-align: center;
 
-	& > input[type='radio']:checked {
-		background-color: red;
-	}
-
 	&:hover {
 		cursor: pointer;
 	}
