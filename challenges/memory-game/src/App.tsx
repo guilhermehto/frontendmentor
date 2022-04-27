@@ -56,7 +56,7 @@ function App() {
 								name="theme"
 								value="numbers"
 								checked={theme === 'numbers'}
-								onChange={(newValue) => setTheme(newValue)}
+								onChange={(newValue: string) => setTheme(newValue)}
 							>
 								Numbers
 							</Radio>
@@ -64,7 +64,7 @@ function App() {
 								name="theme"
 								value="icons"
 								checked={theme === 'icons'}
-								onChange={(newValue) => setTheme(newValue)}
+								onChange={(newValue: string) => setTheme(newValue)}
 							>
 								Icons
 							</Radio>
@@ -73,25 +73,46 @@ function App() {
 					<OptionWrapper>
 						<OptionLabel>Number of Players</OptionLabel>
 						<Option>
-							{['1', '2', '3', '4'].map((numberOfPlayersOption) => {
-								console.log('called')
-
-								return (
-									<Radio
-										key={numberOfPlayers}
-										name="playerNumber"
-										value={numberOfPlayersOption}
-										checked={
-											numberOfPlayers === parseInt(numberOfPlayersOption)
-										}
-										onChange={(newValue) =>
-											setNumberOfPlayers(parseInt(newValue))
-										}
-									>
-										{numberOfPlayersOption}
-									</Radio>
-								)
-							})}
+							<Radio
+								name="playerNumber"
+								value={'1'}
+								checked={numberOfPlayers === parseInt('1')}
+								onChange={(newValue: string) =>
+									setNumberOfPlayers(parseInt(newValue))
+								}
+							>
+								1
+							</Radio>
+							<Radio
+								name="playerNumber"
+								value={'2'}
+								checked={numberOfPlayers === parseInt('2')}
+								onChange={(newValue: string) =>
+									setNumberOfPlayers(parseInt(newValue))
+								}
+							>
+								2
+							</Radio>
+							<Radio
+								name="playerNumber"
+								value={'3'}
+								checked={numberOfPlayers === parseInt('3')}
+								onChange={(newValue: string) =>
+									setNumberOfPlayers(parseInt(newValue))
+								}
+							>
+								3
+							</Radio>
+							<Radio
+								name="playerNumber"
+								value={'4'}
+								checked={numberOfPlayers === parseInt('4')}
+								onChange={(newValue: string) =>
+									setNumberOfPlayers(parseInt(newValue))
+								}
+							>
+								4
+							</Radio>
 						</Option>
 					</OptionWrapper>
 					<OptionWrapper>
@@ -101,7 +122,7 @@ function App() {
 								name="gridSize"
 								value={'4'}
 								checked={gridSize === 4}
-								onChange={(newValue) => setGridSize(parseInt(newValue))}
+								onChange={(newValue: string) => setGridSize(parseInt(newValue))}
 							>
 								4x4
 							</Radio>
@@ -109,7 +130,7 @@ function App() {
 								name="gridSize"
 								value={'6'}
 								checked={gridSize === 6}
-								onChange={(newValue) => setGridSize(parseInt(newValue))}
+								onChange={(newValue: string) => setGridSize(parseInt(newValue))}
 							>
 								6x6
 							</Radio>
