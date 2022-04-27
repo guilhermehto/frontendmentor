@@ -43,13 +43,13 @@ const Radio: React.FC<RadioProps> = ({ children, name, value, checked = false, o
 		<RadioWrapper>
 			<RadioInput
 				type="radio"
-				id={value}
+				id={`${value}-${name}`}
 				name={name}
 				value={value}
 				checked={checked}
 				onChange={() => onChange && onChange(value)}
 			/>
-			<Label htmlFor={value}>{children}</Label>
+			<Label htmlFor={`${value}-${name}`}>{children}</Label>
 		</RadioWrapper>
 	)
 }
