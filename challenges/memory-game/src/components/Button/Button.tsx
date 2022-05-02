@@ -5,6 +5,7 @@ type ButtonProps = {
 	children: string
 	size?: 'small' | 'medium' | 'large' | 'ball'
 	isTextDark?: boolean
+	onClick?: () => void
 }
 
 const StyledButton = styled.button<ButtonProps>`
@@ -76,9 +77,15 @@ const Button: React.FC<ButtonProps> = ({
 	variant = 'secondary',
 	size = 'medium',
 	isTextDark = false,
+	onClick,
 }) => {
 	return (
-		<StyledButton variant={variant} size={size} isTextDark={isTextDark}>
+		<StyledButton
+			variant={variant}
+			size={size}
+			isTextDark={isTextDark}
+			onClick={() => onClick && onClick()}
+		>
 			{children}
 		</StyledButton>
 	)
