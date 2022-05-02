@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
+import { useGameStore } from '../store/game-store'
 
 import { Button } from './Button/Button'
 import { Card } from './Card/Card'
@@ -43,6 +44,16 @@ const GameForm = () => {
 	const [theme, setTheme] = useState<string>('numbers')
 	const [numberOfPlayers, setNumberOfPlayers] = useState<number>(1)
 	const [gridSize, setGridSize] = useState<number>(4)
+
+	const setGameOptions = useGameStore((state) => state.gameOptions.setGameOptions)
+
+	const handleOnStartGame = () => {
+		setGameOptions({
+			theme,
+			numberOfPlayers,
+			gridSize,
+		})
+	}
 
 	return (
 		<GameWrapper>
@@ -127,7 +138,7 @@ const GameForm = () => {
 						</Radio>
 					</Option>
 				</OptionWrapper>
-				<Button variant="primary" size="small">
+				<Button variant="primary" size="small" onClick={handleOnStartGame}>
 					Start Game
 				</Button>
 			</Card>
