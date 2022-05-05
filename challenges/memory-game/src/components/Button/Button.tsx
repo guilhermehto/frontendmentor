@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components'
 
 type ButtonProps = {
-	variant?: 'secondary' | 'primary'
+	variant?: 'secondary' | 'primary' | 'dark'
 	children: string
-	size?: 'small' | 'medium' | 'large' | 'ball'
+	size?: 'small' | 'medium' | 'large'
+	shape?: 'pill' | 'circle'
 	isTextDark?: boolean
 	onClick?: () => void
 }
@@ -11,7 +12,7 @@ type ButtonProps = {
 const StyledButton = styled.button<ButtonProps>`
 	border: none;
 	border-radius: 36px;
-	background-color: ${(props) => props.theme[props.variant]};
+	background-color: ${(props) => props.theme[props.variant || 'secondary']};
 	color: ${(props) => (props.isTextDark ? props.theme.textColor : props.theme.white)};
 
 	&:hover {
@@ -24,29 +25,42 @@ const StyledButton = styled.button<ButtonProps>`
 	}
 
 	${(props) => {
-		switch (props.size) {
-			case 'small':
-				return css`
-					font-size: 20px;
-					padding: 13px 30px;
-				`
-			case 'medium':
-				return css`
-					font-size: 26px;
-					padding: 10px 72px;
-				`
-			case 'large':
-				return css`
-					font-size: 32px;
-					padding: 16px 184px;
-				`
-			case 'ball':
-				return css`
-					font-size: 44px;
-					border-radius: 100%;
-					height: 82px;
-					width: 82px;
-				`
+		if (props.shape === 'pill') {
+			switch (props.size) {
+				case 'small':
+					return css`
+						font-size: 20px;
+						padding: 13px 30px;
+					`
+				case 'medium':
+					return css`
+						font-size: 26px;
+						padding: 10px 72px;
+					`
+				case 'large':
+					return css`
+						font-size: 32px;
+						padding: 16px 184px;
+					`
+			}
+		} else if (props.shape === 'circle') {
+			switch (props.size) {
+				case 'small':
+					return css`
+						border-radius: 50%;
+						width: 47px;
+						height: 47px;
+						font-size: 24px;
+					`
+				case 'medium':
+				case 'large':
+					return css`
+						border-radius: 50%;
+						width: 72px;
+						height: 72px;
+						font-size: 40px;
+					`
+			}
 		}
 	}}
 
@@ -68,6 +82,10 @@ const StyledButton = styled.button<ButtonProps>`
 						background-color: ${props.theme.secondaryActive};
 					}
 				`
+			case 'dark':
+				return css`
+					background-color: ${props.theme.darkBackground};
+				`
 		}
 	}}
 `
@@ -76,6 +94,7 @@ const Button: React.FC<ButtonProps> = ({
 	children,
 	variant = 'secondary',
 	size = 'medium',
+	shape = 'pill',
 	isTextDark = false,
 	onClick,
 }) => {
@@ -83,6 +102,7 @@ const Button: React.FC<ButtonProps> = ({
 		<StyledButton
 			variant={variant}
 			size={size}
+			shape={shape}
 			isTextDark={isTextDark}
 			onClick={() => onClick && onClick()}
 		>

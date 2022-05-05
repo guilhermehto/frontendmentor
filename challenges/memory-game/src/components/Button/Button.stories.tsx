@@ -6,9 +6,9 @@ export default {
 	title: 'General',
 }
 
-export const Button: Story<ButtonProps> = ({ variant, children, size, isTextDark }) => (
+export const Button: Story<ButtonProps> = ({ variant, children, size, isTextDark, shape }) => (
 	<>
-		<ButtonComponent variant={variant} size={size} isTextDark={isTextDark}>
+		<ButtonComponent variant={variant} size={size} isTextDark={isTextDark} shape={shape}>
 			{children}
 		</ButtonComponent>
 	</>
@@ -21,13 +21,18 @@ Button.args = {
 
 Button.argTypes = {
 	variant: {
-		options: ['primary', 'secondary'],
+		options: ['primary', 'secondary', 'dark'],
 		control: { type: 'radio' },
 		defaultValue: 'primary',
 	},
 	size: {
-		options: ['small', 'medium', 'large', 'ball'],
+		options: ['small', 'medium', 'large'],
 		control: { type: 'radio' },
 		defaultValue: 'medium',
+	},
+	shape: {
+		options: ['pill', 'circle'],
+		control: { type: 'radio' },
+		defaultValue: 'pill',
 	},
 }
