@@ -26,7 +26,7 @@ Button.argTypes = {
 		defaultValue: 'primary',
 	},
 	size: {
-		options: ['small', 'medium', 'large'],
+		options: ['xs', 'small', 'medium', 'large'],
 		control: { type: 'radio' },
 		defaultValue: 'medium',
 	},

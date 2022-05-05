@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 type ButtonProps = {
 	variant?: 'secondary' | 'primary' | 'dark'
 	children: string
-	size?: 'small' | 'medium' | 'large'
+	size?: 'xs' | 'small' | 'medium' | 'large'
 	shape?: 'pill' | 'circle'
 	isTextDark?: boolean
 	onClick?: () => void
@@ -27,6 +27,11 @@ const StyledButton = styled.button<ButtonProps>`
 	${(props) => {
 		if (props.shape === 'pill') {
 			switch (props.size) {
+				case 'xs':
+					return css`
+						font-size: 16px;
+						padding: 10px 18px;
+					`
 				case 'small':
 					return css`
 						font-size: 20px;
@@ -45,6 +50,7 @@ const StyledButton = styled.button<ButtonProps>`
 			}
 		} else if (props.shape === 'circle') {
 			switch (props.size) {
+				case 'xs':
 				case 'small':
 					return css`
 						border-radius: 50%;
