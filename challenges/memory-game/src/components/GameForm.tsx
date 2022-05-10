@@ -39,8 +39,11 @@ const OptionLabel = styled.p`
 	color: ${({ theme }) => theme.secondaryTextColor};
 	margin-bottom: 12px;
 `
+type GameFormProps = {
+	onGameStart: () => void
+}
 
-const GameForm = () => {
+const GameForm: React.FC<GameFormProps> = ({ onGameStart }) => {
 	const [theme, setTheme] = useState<string>('numbers')
 	const [numberOfPlayers, setNumberOfPlayers] = useState<number>(1)
 	const [gridSize, setGridSize] = useState<number>(4)
@@ -53,6 +56,7 @@ const GameForm = () => {
 			numberOfPlayers,
 			gridSize,
 		})
+		onGameStart && onGameStart()
 	}
 
 	return (
