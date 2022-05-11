@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 
 import { useGameStore } from '../store/game-store'
@@ -32,16 +32,21 @@ const BoardWrapper = styled.div<BoardWrapperProps>`
 
 const GameBoard = () => {
 	const gameOptions = useGameStore((state) => state.gameOptions)
-	console.log(gameOptions.gridSize)
+
+	const [gridArray, setGridArray] = useState<Array<number>>([])
+
 	const buttonSize = gameOptions.gridSize === 4 ? 'medium' : 'small'
-	const array = Array(gameOptions.gridSize * gameOptions.gridSize).fill('')
+
+	useEffect(() => {
+		setGridArray(getBoardValues(gameOptions.gridSize))
+	}, [])
 
 	return (
 		<Wrapper>
 			<BoardWrapper size={gameOptions.gridSize}>
-				{array.map((_, index) => (
+				{gridArray.map((value: number, index: number) => (
 					<Button key={index} variant="dark" shape="circle" size={buttonSize}>
-						{' '}
+						{value}
 					</Button>
 				))}
 			</BoardWrapper>
@@ -49,16 +54,18 @@ const GameBoard = () => {
 	)
 }
 
-type BoardButtonProps = {
-	size: 'small' | 'medium'
-}
+const getBoardValues = (gridSize: number) => {
+	const boardArray = Array(gridSize * gridSize).fill(-1)
+	for (let x = 0; x < (gridSize * gridSize) / 2; x++) {
+		for (let y = 0; y < 2; y++) {
+			let arrayIndex = Math.floor(Math.random() * boardArray.length)
+			while (boardArray[arrayIndex] !== -1) {
+				arrayIndex = Math.floor(Math.random() * boardArray.length)
+			}
+			boardArray[arrayIndex] = x
+		}
+	}
 
-const BoardButton: React.FC<BoardButtonProps> = ({ size }) => {
-	return (
-		<Button variant="dark" shape="circle" size={size}>
-			{' '}
-		</Button>
-	)
+	return boardArray
 }
-
 export { GameBoard }
