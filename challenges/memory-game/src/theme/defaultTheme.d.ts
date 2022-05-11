@@ -11,5 +11,6 @@ declare module 'styled-components' {
 		textColor: string
 		darkBackground: string
 		secondaryTextColor: string
+		dark: string
 	}
 }

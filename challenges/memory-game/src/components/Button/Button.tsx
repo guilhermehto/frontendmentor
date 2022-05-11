@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 type ButtonProps = {
 	variant?: 'secondary' | 'primary' | 'dark'
-	children: string
+	children: string | number
 	size?: 'xs' | 'small' | 'medium' | 'large'
 	shape?: 'pill' | 'circle'
 	isTextDark?: boolean

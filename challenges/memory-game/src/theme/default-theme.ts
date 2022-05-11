@@ -11,6 +11,7 @@ const defaultTheme: DefaultTheme = {
 	textColor: colors['dark-gray'],
 	secondaryTextColor: colors['light-blue'],
 	darkBackground: colors['dark-gray'],
+	dark: colors['dark-gray'],
 }
 
 export { defaultTheme }
