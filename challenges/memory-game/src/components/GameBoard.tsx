@@ -34,6 +34,8 @@ const GameBoard = () => {
 	const gameOptions = useGameStore((state) => state.gameOptions)
 
 	const [gridArray, setGridArray] = useState<Array<number>>([])
+	const [pairedValues, setPairedValues] = useState<Array<number>>([])
+	const [selectedIndexes, setSelectedIndexes] = useState<[number, number]>([-1, -1])
 
 	const buttonSize = gameOptions.gridSize === 4 ? 'medium' : 'small'
 
@@ -41,14 +43,43 @@ const GameBoard = () => {
 		setGridArray(getBoardValues(gameOptions.gridSize))
 	}, [])
 
+	const handleButtonClicked = (value: number) => {
+		selectedIndexes[selectedIndexes.findIndex((e) => e === -1)] = value
+		setSelectedIndexes(selectedIndexes)
+		console.log(selectedIndexes)
+	}
+
+	const getButtonVariant = (value: number, index: number) => {
+		if (selectedIndexes.includes(index)) return 'primary'
+		if (pairedValues.includes(value)) return 'secondary'
+
+		return 'dark'
+	}
+
+	const getButtonDisplayValue = (value: number, index: number) => {
+		if (selectedIndexes.includes(index)) return value
+		if (pairedValues.includes(value)) return value
+
+		return ''
+	}
+
 	return (
 		<Wrapper>
 			<BoardWrapper size={gameOptions.gridSize}>
-				{gridArray.map((value: number, index: number) => (
-					<Button key={index} variant="dark" shape="circle" size={buttonSize}>
-						{value}
-					</Button>
-				))}
+				{gridArray.map((value: number, index: number) => {
+					console.log('called render')
+					return (
+						<Button
+							key={index}
+							variant={getButtonVariant(value, index)}
+							shape="circle"
+							size={buttonSize}
+							onClick={() => handleButtonClicked(value)}
+						>
+							{pairedValues[0]}
+						</Button>
+					)
+				})}
 			</BoardWrapper>
 		</Wrapper>
 	)
