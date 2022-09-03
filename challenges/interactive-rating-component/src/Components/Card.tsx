@@ -5,7 +5,7 @@ type CardProps = {
 }
 
 const Card: React.FC<CardProps> = ({ children }) => {
-	return <div className="rounded-lg bg-dark-gradient p-6">{children}</div>
+	return <div className="flex flex-col rounded-lg bg-dark-gradient p-6">{children}</div>
 }
 
 export { Card }
