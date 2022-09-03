@@ -7,3 +7,11 @@
 * {
 	font-family: 'Overpass', sans-serif;
 }
+
+body {
+	height: 100vh;
+}
+
+#root {
+	height: 100%;
+}

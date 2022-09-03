@@ -6,7 +6,15 @@ module.exports = {
 			display: ['Overpass'],
 			body: ['Overpass'],
 		},
-		extend: {},
+		extend: {
+			colors: {
+				'very-dark-blue': '#131518',
+				'dark-blue': '#262E38',
+				'light-gray': '#969FAD',
+				'medium-gray': '#7C8798',
+				orange: '#FC7614',
+			},
+		},
 	},
 	plugins: [],
 }
