@@ -7,6 +7,9 @@ module.exports = {
 			body: ['Overpass'],
 		},
 		extend: {
+			backgroundImage: {
+				'dark-gradient': 'radial-gradient(#232A34, #181E27)',
+			},
 			colors: {
 				'very-dark-blue': '#131518',
 				'dark-blue': '#262E38',
