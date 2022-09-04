@@ -1,8 +1,10 @@
+import { RatingCard } from './Components/RatingCard'
+
 function App() {
 	return (
-		<div className="bg-very-dark-blue h-screen">
-			<h1 className="text-3xl font-bold underline">Hello world!</h1>
-		</div>
+		<main className="bg-very-dark-blue h-screen px-6 flex flex-col justify-center">
+			<RatingCard />
+		</main>
 	)
 }
 
