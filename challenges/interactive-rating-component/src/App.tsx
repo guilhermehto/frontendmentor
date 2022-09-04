@@ -10,7 +10,7 @@ function App() {
 	}
 
 	return (
-		<main className="bg-very-dark-blue h-screen px-6 flex flex-col justify-center">
+		<main className="bg-very-dark-blue h-screen px-6 flex flex-col justify-center items-center">
 			{selectedRating === 0 ? (
 				<RatingCard onSubmit={handleOnSubmit} />
 			) : (
