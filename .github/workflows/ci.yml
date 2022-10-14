@@ -30,6 +30,7 @@ jobs:
 
       - name: Deploy
         uses: nwtgck/actions-netlify@v1.2
+        working-directory: ./apps/password-generator
         with:
           publish-dir: "./dist"
           production-branch: main
