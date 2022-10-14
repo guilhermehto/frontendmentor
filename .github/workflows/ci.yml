@@ -31,8 +31,7 @@ jobs:
       - name: Deploy
         uses: nwtgck/actions-netlify@v1.2
         with:
-          working-directory: ./apps/password-generator
-          publish-dir: "./dist"
+          publish-dir: "./apps/password-generator/dist"
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
