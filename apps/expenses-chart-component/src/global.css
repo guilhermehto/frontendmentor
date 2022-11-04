@@ -1,0 +1,30 @@
+/**
+ * WHAT IS THIS FILE?
+ *
+ * Globally applied styles. No matter which components are in the page or matching route,
+ * the styles in here will be applied to the Document, without any sort of CSS scoping.
+ *
+ */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,700;1,400&display=swap');
+
+:root {
+	--white: #ffffff;
+	--card-white: #fffbf6;
+	--cream: #f8e9dd;
+	--medium-brown: #92857a;
+	--dark-brown: #382314;
+	--cyan: #76b5bc;
+	--red: #ec755d;
+}
+
+html {
+	font-family: 'DM Sans', sans-serif;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--cream);
+}
