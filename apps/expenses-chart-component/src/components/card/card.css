@@ -1,0 +1,14 @@
+div {
+	border-radius: 10px;
+	padding: 20px;
+}
+
+.primary {
+	background: var(--red);
+	color: var(--white);
+}
+
+.default {
+	background: var(--card-white);
+	color: var(--dark-brown);
+}
