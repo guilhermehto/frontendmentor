@@ -5,7 +5,7 @@
  * the styles in here will be applied to the Document, without any sort of CSS scoping.
  *
  */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@400,700;1,400&display=swap');
 
 :root {
 	--white: #ffffff;
@@ -19,6 +19,8 @@
 
 html {
 	font-family: 'DM Sans', sans-serif;
+	font-weight: bold;
+	font-size: 18px;
 }
 
 body {
