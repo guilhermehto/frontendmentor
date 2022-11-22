@@ -25,6 +25,7 @@
     "@builder.io/qwik-city": "0.0.118",
     "@types/eslint": "8.4.8",
     "@types/node": "latest",
+    "@types/ramda": "^0.28.20",
     "@typescript-eslint/eslint-plugin": "5.41.0",
     "@typescript-eslint/parser": "5.41.0",
     "eslint": "8.26.0",
@@ -34,5 +35,9 @@
     "typescript": "4.8.4",
     "vite": "3.2.1",
     "vite-tsconfig-paths": "3.5.0"
+  },
+  "dependencies": {
+    "clsx": "^1.2.1",
+    "ramda": "^0.28.0"
   }
 }

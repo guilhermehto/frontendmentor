@@ -1,0 +1,20 @@
+.graph {
+	display: flex;
+	justify-content: space-evenly;
+	gap: 20px;
+	align-items: end;
+	min-height: 200px;
+}
+
+.bar {
+	background: var(--red);
+	width: 33px;
+	display: flex;
+	padding: 0;
+	margin: 0;
+	border-radius: 3px;
+}
+
+.heighest {
+	background: var(--cyan);
+}
