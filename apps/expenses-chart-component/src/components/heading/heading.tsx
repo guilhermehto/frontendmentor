@@ -1,4 +1,4 @@
-import { component$, Slot, useStyles$ } from '@builder.io/qwik'
+import { component$, Slot, useStylesScoped$ } from '@builder.io/qwik'
 
 import styles from './heading.css'
 
@@ -8,7 +8,7 @@ type HeadingProps = {
 }
 
 export const Heading = component$(({ level = 1, color = 'brown' }: HeadingProps) => {
-	useStyles$(styles)
+	useStylesScoped$(styles)
 
 	switch (level) {
 		case 2:
