@@ -2,6 +2,15 @@
 	font-size: 12px;
 }
 
+.regular {
+	font-size: 18px;
+	font-weight: 300;
+}
+
 .center {
 	text-align: center;
+}
+
+.caption {
+	color: var(--medium-brown);
 }
