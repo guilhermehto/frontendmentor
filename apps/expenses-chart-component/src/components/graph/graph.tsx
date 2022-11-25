@@ -64,9 +64,11 @@ export const Bar = component$(({ value, maxValue, maxHeight, label }: BarProps) 
 	const classes = clsx('bar', maxValue === value && 'heighest')
 
 	const barRef = useSignal<HTMLElement>()
-	const height = (value / maxValue) * maxHeight
 
-	if (barRef.value) barRef.value.style.height = `${height}px`
+	if (barRef.value) {
+		const height = (value / maxValue) * maxHeight
+		barRef.value.style.height = `${height}px`
+	}
 
 	return (
 		<div>
