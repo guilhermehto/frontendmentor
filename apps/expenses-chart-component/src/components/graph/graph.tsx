@@ -8,8 +8,8 @@ import {
 import { reduce, max } from 'ramda'
 import { clsx } from 'clsx'
 
+import { Caption } from '../caption/caption'
 import styles from './graph.css'
-import { Heading } from '../heading/heading'
 
 type GraphProps = {
 	values: Array<{ value: number; label?: string }>
@@ -17,27 +17,28 @@ type GraphProps = {
 
 export const Graph = component$(({ values }: GraphProps) => {
 	useStylesScoped$(styles)
+	const graphRef = useSignal<HTMLElement>()
+
 	const maxValue = reduce(
 		max,
 		-Infinity,
 		values.map((v) => v.value)
 	)
-	const graphRef = useSignal<Element>()
 
-	const state = useStore(() => ({
-		graphHeight: 240,
-	}))
+	const state = useStore({
+		graphHeight: 0,
+	})
 
 	useClientEffect$(() => {
 		if (graphRef.value) {
-			state.graphHeight = graphRef.value.getBoundingClientRect().height
+			const height = graphRef.value.getBoundingClientRect().height
+			state.graphHeight = height
 		}
 	})
 
 	return (
 		<div class="graph" ref={graphRef}>
 			{values.map((value) => {
-				console.log(value)
 				return (
 					<Bar
 						maxValue={maxValue as number}
@@ -61,21 +62,18 @@ type BarProps = {
 export const Bar = component$(({ value, maxValue, maxHeight, label }: BarProps) => {
 	useStylesScoped$(styles)
 	const classes = clsx('bar', maxValue === value && 'heighest')
-	const barRef = useSignal<HTMLElement>()
 
-	useClientEffect$(() => {
-		if (barRef.value) {
-			const height = (value / maxValue) * maxHeight
-			barRef.value.style.height = `${height}px`
-		}
-	})
+	const barRef = useSignal<HTMLElement>()
+	const height = (value / maxValue) * maxHeight
+
+	if (barRef.value) barRef.value.style.height = `${height}px`
 
 	return (
 		<div>
 			<div ref={barRef} class={classes} />
 			{label ? (
 				<div>
-					<Heading level={4}>{label}</Heading>
+					<Caption center>{label}</Caption>
 				</div>
 			) : null}
 		</div>
